@@ -1,9 +1,3 @@
-@import url(../menu/__list/menu__list.css);
-@import url(../menu/__list-item/menu__list-item.css);
-@import url(../menu/__link/menu__link.css);
-@import url(./__link/_active/menu__link_active.css);
-@import url(../menu/__icon/menu__icon.css);
-@import url(../menu/__icon/menu__icon2.css);
 .menu {
     margin: 0;
 	padding: 0;
