@@ -8,9 +8,9 @@
 	line-height: 24px;
 	color: #212329;
     text-decoration: none;
+	cursor: pointer;
 }
 
 .header__link:hover {
 	opacity: 0.8;
-    cursor: pointer;
 }
