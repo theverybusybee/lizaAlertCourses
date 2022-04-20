@@ -1,0 +1,16 @@
+.menu__link {
+	text-decoration: none;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: #212329;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    cursor: pointer;
+}
+
+.menu__link:hover {
+	opacity: 0.8;
+}
