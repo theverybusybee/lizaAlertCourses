@@ -1,0 +1,14 @@
+@import url(./__link/header__link.css);
+.header {
+    box-sizing: border-box;
+	grid-area: header;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 24px 60px;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(231, 232, 235, 0.6);
+		
+}
