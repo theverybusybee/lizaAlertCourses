@@ -1,0 +1,16 @@
+.courses {
+    padding: 0;
+    margin-left: 60px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 1320px;
+    height: 52;
+    font-weight: 700;
+    font-style: normal;
+	font-size: 48px;
+	line-height: 52px;
+	color: #212329;
+
+}
