@@ -1,5 +1,5 @@
 .header {
-    box-sizing: border-box;
+  box-sizing: border-box;
 	grid-area: header;
 	width: 100%;
 	display: flex;
