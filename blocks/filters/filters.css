@@ -1,11 +1,7 @@
 .filters {
-  margin: 0;
-  margin-left: 60px;
-  margin-top: 32px;
+  margin: 32px 0 0 60px;
   max-width: 312px;
-  background: #FFFFFF;
-/* drop shadow */
-
-box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6), 0px 4px 16px rgba(231, 232, 235, 0.6);
-border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6), 0px 4px 16px rgba(231, 232, 235, 0.6);
+  border-radius: 16px;
 }

@@ -1,7 +1,5 @@
 .filters__categories {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   border-top: 1px solid #E6E7EB;
-  
 }

@@ -1,8 +1,5 @@
 .filters__container {
-  margin: 0;
-  margin-top: 32px;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin: 32px 32px 0;
   max-width: 248px;
   display: flex;
   flex-direction: column;
