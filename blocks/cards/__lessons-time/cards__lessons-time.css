@@ -1,0 +1,5 @@
+.cards__lessons-time {
+  display: flex;
+  margin-left: 10px;
+  justify-content: flex-end;
+}
