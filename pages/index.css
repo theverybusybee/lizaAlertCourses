@@ -30,3 +30,7 @@
 @import url(../blocks/profile/__achievement-icon/profile__achievement-icon.css);
 @import url(../blocks/profile/__exit-button/profile__exit-button.css);
 @import url(../blocks/profile/__exit-icon/profile__exit-icon.css);
+
+/*annotation*/
+@import url(../blocks/annotation/annotation.css);
+@import url(../blocks/annotation/__small/annotation__small.css);
