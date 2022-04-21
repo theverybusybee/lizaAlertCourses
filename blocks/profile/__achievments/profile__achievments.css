@@ -1,0 +1,8 @@
+.profile__achievments {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    grid-template-rows: repeat(3, 1fr);
+}
