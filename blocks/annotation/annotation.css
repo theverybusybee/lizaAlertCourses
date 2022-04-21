@@ -1,6 +1,7 @@
 .annotation {
     grid-column-start: 3;
     margin-left: 60px;
+    margin-top: 10px;
     width: 312px;
     height: 432px;
     font-weight: 400;
