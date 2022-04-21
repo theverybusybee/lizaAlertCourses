@@ -25,7 +25,7 @@
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__name/profile__name.css);
-@import url(../blocks/profile/__achievments/profile__achievments.css);
-@import url(../blocks/profile/__achievment/profile__achievment.css);
-@import url(../blocks/profile/__achievment-icon/profile__achievment-icon.css);
+@import url(../blocks/profile/__achievements/profile__achievements.css);
+@import url(../blocks/profile/__achievement/profile__achievement.css);
+@import url(../blocks/profile/__achievement-icon/profile__achievement-icon.css);
 @import url(../blocks/profile/__exit-button/profile__exit-button.css);
