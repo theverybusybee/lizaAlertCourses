@@ -15,7 +15,7 @@
       href="../images/logos/favicon/favicon.ico"
     />
     <link rel="stylesheet" href="../pages/index.css" />
-    <title>Liza Alert Couses</title>
+    <title>LizaAlert Couses</title>
   </head>
   <body class="page">
     <div class="page__container">
@@ -25,12 +25,20 @@
           <ul class="menu__list">
             <li class="menu__list-item">
               <a id="page-link" class="menu__link menu__link_active" href="#">
-                <img class="menu__icon" src="../images/logos/square-academic-cap_black.svg" alt="Курсы">Курсы
+                <img
+                  class="menu__icon"
+                  src="../images/logos/square-academic-cap_black.svg"
+                  alt="Курсы"
+                />Курсы
               </a>
             </li>
             <li class="menu__list-item">
               <a class="menu__link" href="#">
-                <img class="menu__icon2" src="../images/logos/preson-icon_black.svg" alt="Профиль">Профиль
+                <img
+                  class="menu__icon2"
+                  src="../images/logos/preson-icon_black.svg"
+                  alt="Профиль"
+                />Профиль
               </a>
             </li>
           </ul>
@@ -41,26 +49,194 @@
       <main class="content"></main>
       <!-- /.content -->
       <h1 class="heading">Профиль</h1>
-        <section class="profile">
-          <div class="profile__info">
-            <img class="profile__avatar" src="../images/logos/imgavatar.png" alt="аватар пользователя">
-            <h2 class="profile__name">Иванова Анна Сидоровна</h2>
-            <div class="profile__achievements-container">
-              <ul class="profile__achievements">
-                <li>
-                  <p class="profile__achievement"><img class="profile__achievement-icon" src="../images/logos/hierarchy.svg" alt="иконка профессионала">Профессионал</p>
-                </li>
-                <li>
-                  <p class="profile__achievement"><img class="profile__achievement-icon" src="../images/logos/medal_black.svg" alt="иконка медали">Картограф</p>
-                </li>
-                <li>
-                  <p class="profile__achievement"><img class="profile__achievement-icon" src="../images/logos/square-academic-cap_black.svg" alt="иконка образования">Пройдено 2 курса</p>
-                </li>
-              </ul>
-              <button class="profile__exit-button"><img class="profile__exit-icon" src="../images/logos/exit-logo_orange.svg" alt="выход"> Выйти из аккаунта</button>
-            </div>
+
+      <section class="profile">
+        <div class="profile-info">
+          <img
+            class="profile-info__avatar"
+            src="../images/logos/imgavatar.png"
+            alt="аватар пользователя"
+          />
+          <h2 class="profile-info__name">Иванова Анна Сидоровна</h2>
+          <div class="profile-info__achievements-container">
+            <ul class="profile-info__achievements">
+              <li>
+                <p class="profile-info__achievement">
+                  <img
+                    class="profile-info__achievement-icon"
+                    src="../images/logos/hierarchy.svg"
+                    alt="иконка профессионала"
+                  />
+                  Профессионал
+                </p>
+              </li>
+
+              <li>
+                <p class="profile-info__achievement">
+                  <img
+                    class="profile-info__achievement-icon"
+                    src="../images/logos/medal_black.svg"
+                    alt="иконка медали"
+                  />
+                  Картограф
+                </p>
+              </li>
+
+              <li>
+                <p class="profile-info__achievement">
+                  <img
+                    class="profile-info__achievement-icon"
+                    src="../images/logos/square-academic-cap_black.svg"
+                    alt="иконка образования"
+                  />
+                  Пройдено 2 курса
+                </p>
+              </li>
+            </ul>
+
+            <button class="profile-info__exit-button">
+              <img
+                class="profile-info__exit-icon"
+                src="../images/logos/exit-logo_orange.svg"
+                alt="выход"
+              />
+              Выйти из аккаунта
+            </button>
           </div>
-        </section>
+        </div>
+
+        <div class="profile-edit-card profile-edit-card__personal-data">
+          <div class="profile-edit-card__container">
+            <h2 class="profile-edit-card__heading">Личные данные</h2>
+
+            <form
+              class="profile-form profile-form_content_personal-data"
+              name="edit-personal-data"
+            >
+              <p class="profile-form__input-title">ФИО</p>
+              <label for="profile-name">
+                <input
+                  class="profile-form__item profile-form__item_action_text"
+                  type="text"
+                  name="profile-name"
+                  id="profile-name"
+                  placeholder="ФИО"
+                />
+              </label>
+
+              <p class="profile-form__input-title">Дата рождения</p>
+              <label for="profile-date-of-birth">
+                <input
+                  class="profile-form__item profile-form__item_action_text"
+                  type="text"
+                  name="profile-date-of-birth"
+                  placeholder="Дата рождения"
+                  id="profile-date-of-birth"
+                />
+              </label>
+
+              <p class="profile-form__input-title">Географический район</p>
+              <label for="profile-location">
+                <input
+                  class="profile-form__item profile-form__item_action_text"
+                  type="text"
+                  name="profile-location"
+                  placeholder="Географический регион"
+                  id="profile-location"
+                />
+              </label>
+
+              <p class="profile-form__input-title">Позывной на форуме</p>
+              <label for="profile-nickname">
+                <input
+                  class="profile-form__item profile-form__item_action_text"
+                  type="text"
+                  name="profile-nickname"
+                  placeholder="Позывной"
+                  id="profile-nickname"
+                />
+              </label>
+
+              <p class="profile-form__input-title">Фото</p>
+              <label for="profile-avatar">
+                <input
+                  class="profile-form__item profile-form__item_action_image"
+                  type="image"
+                  name="profile-avatar"
+                  placeholder="Фото"
+                  id="profile-avatar"
+                />
+              </label>
+
+              <button
+                id="PersonalDataSubmitButton"
+                class="profile-form__submit-button"
+                type="submit"
+                title="Сохранить"
+              >
+                Сохранить изменения
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- /.profile-edit-card -->
+
+        <div class="profile-edit-card profile-edit-card__account">
+          <div class="profile-edit-card__container">
+            <h2 class="profile-edit-card__heading">Аккаунт</h2>
+
+            <form
+              class="profile-form profile-form_content_personal-data"
+              name="edit-personal-data"
+            >
+              <p class="profile-form__input-title">Номер телефона</p>
+              <label for="profile-number">
+                <input
+                  class="profile-form__item profile-form__item_action_number"
+                  type="tel"
+                  name="profile-number"
+                  id="profile-number"
+                  placeholder="+7 123 456 78 90"
+                />
+              </label>
+
+              <p class="profile-form__input-title">Email</p>
+              <label for="profile-email">
+                <input
+                  class="profile-form__item profile-form__item_action_email"
+                  type="email"
+                  name="profile-email"
+                  placeholder="anna@liza-alert.ru"
+                  id="profile-email"
+                />
+              </label>
+
+              <p class="profile-form__input-title">Пароль</p>
+              <label for="profile-location">
+                <input
+                  class="profile-form__item profile-form__item_action_text"
+                  type="password"
+                  name="profile-password"
+                  placeholder="Пароль"
+                  id="profile-password"
+                />
+              </label>
+
+              <button
+                id="PersonalDataSubmitButton"
+                class="profile-form__submit-button"
+                type="submit"
+                title="Сохранить"
+              >
+                Сохранить изменения
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- /.profile-edit-card -->
+      </section>
+
       <footer class="footer"></footer>
       <!-- /.footer -->
     </div>

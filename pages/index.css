@@ -20,12 +20,27 @@
 /* heading */
 @import url(../blocks/heading/heading.css);
 
-/*profile*/
+/* profile */
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/__info/profile__info.css);
-@import url(../blocks/profile/__avatar/profile__avatar.css);
-@import url(../blocks/profile/__name/profile__name.css);
-@import url(../blocks/profile/__achievements/profile__achievements.css);
-@import url(../blocks/profile/__achievement/profile__achievement.css);
-@import url(../blocks/profile/__achievement-icon/profile__achievement-icon.css);
-@import url(../blocks/profile/__exit-button/profile__exit-button.css);
+
+/* profile-info */
+@import url(../blocks/profile-info/profile-info.css);
+@import url(../blocks/profile-info/__avatar/profile-info__avatar.css);
+@import url(../blocks/profile-info/__name/profile-info__name.css);
+@import url(../blocks/profile-info/__achievements/profile-info__achievements.css);
+@import url(../blocks/profile-info/__achievement/profile-info__achievement.css);
+@import url(../blocks/profile-info/__achievement-icon/profile-info__achievement-icon.css);
+@import url(../blocks/profile-info/__exit-button/profile-info__exit-button.css);
+
+/* profile-edit-card */
+@import url(../blocks/profile-edit-card/profile-edit-card.css);
+@import url(../blocks/profile-edit-card/__container/profile-edit-card__container.css);
+@import url(../blocks/profile-edit-card/__personal-data/profile-edit-card__personal-data.css);
+@import url(../blocks/profile-edit-card/__account/profile-edit-card__account.css);
+@import url(../blocks/profile-edit-card/__heading/profile-edit-card__heading.css);
+
+
+/* profile-form */
+@import url(../blocks/profile-form/__input-title/profile-form__input-title.css);
+@import url(../blocks/profile-form/__item/profile-form__item.css);
+@import url(../blocks/profile-form/__submit-button/profile-form__submit-button.css);

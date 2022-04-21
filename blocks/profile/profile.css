@@ -1,6 +1,10 @@
 .profile {
+    max-width: 1320px;
+    margin: 32px auto 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 2fr);
+    grid-template-columns: 312px 1fr 312px;
     gap: 24px;
+    grid-template-areas: 
+    'profile-info personal-data .'
+    '. account .';
 }
