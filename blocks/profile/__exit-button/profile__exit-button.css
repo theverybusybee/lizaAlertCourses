@@ -11,7 +11,7 @@
     align-items: center;
     padding: 12px 24px;
     position: static;
-    width: 247px;
+    min-width: 247px;
     left: calc(50% - 247px/2);
     top: 0%;
     bottom: 0%;
