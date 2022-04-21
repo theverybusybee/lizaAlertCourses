@@ -19,11 +19,214 @@
   </head>
   <body class="page">
     <div class="page__container">
-      <header class="header"></header>
+      <header class="header">
+        <a class="header__link" href="#">Учебная платформа</a>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a id="page-link" class="menu__link menu__link_active" href="#">
+                <img
+                  class="menu__icon"
+                  src="./images/logos/square-academic-cap_orange.svg"
+                  alt="Иконка шапки выпускника"
+                />Курсы
+              </a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__link" href="#">
+                <img
+                  class="menu__icon"
+                  src="./images/logos/preson-icon_black.svg"
+                  alt="Иконка человека"
+                />Профиль
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <!-- /.header -->
-
+      
       <main class="content">
-        <aside class="filter"></aside>
+      <h1 class="heading">Курсы</h1>
+      <aside class="filters">
+        <div class="filters__container">
+          <div class="filters__header">
+            <h3 class="filters__title">Фильтры</h3>
+            <button class="filters__delete-button">очистить</button>
+          </div>
+          <div class="filters__block">
+            <div class="filters__categories">
+              <h4 class="filters__name-block">Категория</h4>
+              <button type="button" class="filters__open-button"></button> 
+            </div>
+            
+            <ul class="filters__options">
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+              
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+              
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="filters__block">
+            <div class="filters__categories">
+              <h4 class="filters__name-block">Тематика</h4>
+              <button type="button" class="filters__open-button"></button> 
+            </div>
+            <ul class="filters__options">
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Элемент списка</span>
+                </label>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="filters__block">
+            <div class="filters__categories">
+              <h4 class="filters__name-block">Уровень</h4>
+              <button type="button" class="filters__open-button"></button> 
+            </div>
+            <ul class="filters__options">
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Новичок</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Бывалый</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Профессионал</span>
+                </label>
+              </li> 
+
+            </ul>
+          </div>
+
+          <div class="filters__block">
+            <div class="filters__categories">
+              <h4 class="filters__name-block">Статус</h4>
+              <button type="button" class="filters__open-button"></button> 
+            </div>
+            <ul class="filters__options">
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Не активный</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Вы записаны</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Активный</span>
+                </label>
+              </li>
+
+              <li class="filters__element">
+                <label class="filters__label">
+                  <input class="filters__box" type="checkbox">
+                  <span class="filters__checkbox-image"></span>
+                  <span class="filters__checkbox-name">Пройден</span>
+                </label>
+              </li>
+            </ul>
+          </div> 
+        </div>
+      </aside>        
 
         <section class="cards">
           <ul class="cards__container">
@@ -158,10 +361,10 @@
               </div>
             </li>
           </ul>
-        </section>
+        </section>          
       </main>
       <!-- /.content -->
-
+    
       <footer class="footer"></footer>
       <!-- /.footer -->
     </div>
