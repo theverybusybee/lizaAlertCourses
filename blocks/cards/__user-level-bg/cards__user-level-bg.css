@@ -2,6 +2,9 @@
   background: #e6e7eb;
   border-radius: 16px;
   margin-top: 16px;
-  max-width: 149px;
-  min-width: 96px;
+  display: flex;
+  justify-content: center;
+  max-width: fit-content;
+  padding-left: 8px;
+  padding-right: 8px;
 }

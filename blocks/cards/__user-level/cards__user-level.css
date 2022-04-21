@@ -4,9 +4,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  display: flex;
-  justify-content: center;
   color: #212329;
   margin-top: 16px;
-
+  margin: 0;
 }
