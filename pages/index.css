@@ -12,3 +12,19 @@
 @import url(../blocks/menu/__link/_active/menu__link_active.css);
 @import url(../blocks/menu/__icon/menu__icon.css);
 @import url(../blocks/menu/__icon/menu__icon2.css);
+/*Filters*/
+@import url(../blocks/filters/filters.css);
+@import url(../blocks/filters/__container/filters__container.css);
+@import url(../blocks/filters/__header/filters__header.css);
+@import url(../blocks/filters/__title/filters__title.css);
+@import url(../blocks/filters/__delete-button/filters__delete-button.css);
+@import url(../blocks/filters/__block/filters__block.css);
+@import url(../blocks/filters/__categories/filters__categories.css);
+@import url(../blocks/filters/__name-block/filters__name-block.css);
+@import url(../blocks/filters/__open-button/filters__open-button.css);
+@import url(../blocks/filters/__options/filters__options.css);
+@import url(../blocks/filters/__element/filters__element.css);
+@import url(../blocks/filters/__box/filters__box.css);
+@import url(../blocks/filters/__label/filters__label.css);
+@import url(../blocks/filters/__checkbox-image/filters__checkbox-image.css);
+@import url(../blocks/filters/__checkbox-name/filters__checkbox-name.css);
