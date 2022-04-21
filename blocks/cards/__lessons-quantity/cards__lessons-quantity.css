@@ -1,0 +1,6 @@
+.cards__lessons-quantity {
+  display: flex;
+  margin-left: 10px;
+  text-align: right;
+  margin-bottom: 16px;
+}

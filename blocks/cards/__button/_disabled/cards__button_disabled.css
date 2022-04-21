@@ -1,0 +1,9 @@
+.cards__button_disabled {
+    background: #E6E7EB;
+    color: #9397A3;
+    cursor: default;
+}
+
+.cards__button_disabled:hover{
+    opacity: 1;
+  }
