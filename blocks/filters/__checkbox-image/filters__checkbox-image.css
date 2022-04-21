@@ -5,6 +5,7 @@
   height: 20px;
   background-image: url(../../../images/logos/Vector.png);
   cursor: pointer;
+  z-index: 0;
 }
 
 .filters__box:checked + .filters__checkbox-name {
