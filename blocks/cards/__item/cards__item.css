@@ -1,5 +1,5 @@
 .cards__item {
-  width: 984px;
+  max-width: 984px;
   list-style: none;
   box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6),
     0px 4px 16px rgba(231, 232, 235, 0.6);

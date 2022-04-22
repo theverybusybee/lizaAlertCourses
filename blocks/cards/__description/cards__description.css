@@ -1,10 +1,7 @@
 .cards__description {
   margin: 24px 0 24px;
-  width: 448px;
-  font-family: "Golos";
-  font-style: normal;
-  font-weight: 400;
+  max-width: 448px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.33;
   color: #212329;
 }

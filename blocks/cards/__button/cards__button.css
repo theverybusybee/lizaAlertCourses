@@ -1,19 +1,17 @@
 .cards__button {
+  box-sizing: border-box;
+  margin-top: 64px;
+  padding: 12px 56px;
+  min-width: 224px;
   background: #ffffff;
   border: 1.2px solid #e6e7eb;
-  box-sizing: border-box;
   border-radius: 16px;
-  padding: 12px 56px;
-  font-family: "Golos";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.33;
   text-align: center;
   color: #ff6600;
-  margin-top: 64px;
   cursor: pointer;
-  min-width: 224px;
 }
 
 .cards__button:hover {
