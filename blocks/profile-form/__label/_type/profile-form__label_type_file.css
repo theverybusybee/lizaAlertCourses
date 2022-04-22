@@ -1,0 +1,17 @@
+.profile-form__label_type_file {
+  padding: 24px 16px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: 1.2px solid #e6e7eb;
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #212329;
+  cursor: pointer;
+}
+
+.profile-form__label_type_file:hover {
+  border-color: #f60;
+  ;
+}
