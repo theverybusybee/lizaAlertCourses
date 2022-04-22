@@ -9,6 +9,7 @@
   line-height: 1.33;
   color: #212329;
   cursor: pointer;
+  background: url(../../../../images/logos/clip_black.svg) no-repeat scroll 543px;
 }
 
 .profile-form__label_type_file:hover {

@@ -20,11 +20,11 @@
   <body class="page">
     <div class="page__container">
       <header class="header">
-        <a class="header__link" href="#">Учебная платформа</a>
+        <a class="header__link" href="../index.html">Учебная платформа</a>
         <nav class="menu">
           <ul class="menu__list">
             <li class="menu__list-item">
-              <a id="page-link" class="menu__link menu__link_active" href="#">
+              <a id="page-link" class="menu__link" href="../index.html">
                 <img
                   class="menu__icon"
                   src="../images/logos/square-academic-cap_black.svg"
@@ -33,10 +33,10 @@
               </a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__link" href="#">
+              <a class="menu__link menu__link_active" href="./profile.html">
                 <img
                   class="menu__icon"
-                  src="../images/logos/preson-icon_black.svg"
+                  src="../images/logos/preson-icon_orange.svg"
                   alt="Профиль"
                 />Профиль
               </a>
@@ -133,7 +133,7 @@
               >Email нужен для восстановления пароля</p
             >
           </div>
-          <div class="profile-edit-card profile-edit-card__personal-data">
+          <div class="profile-edit-card profile-edit-card_type_personal-data">
             <div class="profile-edit-card__container">
               <h2 class="profile-edit-card__heading">Личные данные</h2>
 
@@ -183,11 +183,11 @@
 
                 <p class="profile-form__input-title">Фото</p>
                 <label
-                  class="profile-form__label_type_file profile-form__item_icon_clip"
+                  class="profile-form__label profile-form__label_type_file"
                   for="profile-avatar"
                 >
                   <input
-                    class="profile-form__item profile-form__item_action_file profile-form__item_icon_clip"
+                    class="profile-form__item profile-form__item_action_file"
                     type="file"
                     name="profile-avatar"
                     id="profile-avatar"
@@ -207,7 +207,7 @@
           </div>
           <!-- /.profile-edit-card -->
 
-          <div class="profile-edit-card profile-edit-card__account">
+          <div class="profile-edit-card profile-edit-card_type_account">
             <div class="profile-edit-card__container">
               <h2 class="profile-edit-card__heading">Аккаунт</h2>
 
@@ -260,7 +260,6 @@
           </div>
 
           <!-- /.profile-edit-card -->
-          >>>>>>> profile-form
         </section>
       </main>
       <!-- /.content -->

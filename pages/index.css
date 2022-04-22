@@ -71,8 +71,8 @@
 /* profile-edit-card */
 @import url(../blocks/profile-edit-card/profile-edit-card.css);
 @import url(../blocks/profile-edit-card/__container/profile-edit-card__container.css);
-@import url(../blocks/profile-edit-card/__personal-data/profile-edit-card__personal-data.css);
-@import url(../blocks/profile-edit-card/__account/profile-edit-card__account.css);
+@import url(../blocks/profile-edit-card/_type/profile-edit-card_type_personal-data.css);
+@import url(../blocks/profile-edit-card/_type/profile-edit-card_type_account.css);
 @import url(../blocks/profile-edit-card/__heading/profile-edit-card__heading.css);
 
 /* profile-form */
