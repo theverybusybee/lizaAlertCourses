@@ -10,12 +10,9 @@
   color: #212329;
 }
 
-/*.profile-form__item::placeholder {
-  color: rgba(147, 151, 163, 1);
-}*/
-
-.profile-form__item::-webkit-input-placeholder {
-  color: rgba(147, 151, 163, 1);
+.profile-form__item::-webkit-input-placeholder, .profile-form__item::-moz-placeholder {
+  color: #9397a3;
+  opacity: 1;
 }
 
 .profile-form__item:hover {

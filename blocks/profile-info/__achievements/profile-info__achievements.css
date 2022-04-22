@@ -1,6 +1,7 @@
 .profile-info__achievements {
-    list-style: none;
+    margin: 32px 0 0;
     padding: 0;
+    list-style: none;
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
