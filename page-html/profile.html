@@ -104,7 +104,21 @@
             </button>
           </div>
         </div>
-
+        <div class="annotation">
+          <p class="annotation__paragraph">Просьба указывать настоящие ФИО, это нужно для получения сертификатов</p>
+          <p class="annotation__paragraph">Географический регион влияет на доступность некоторых курсов и занятий</p>
+          <p class="annotation__paragraph">Если вы не хотите, чтобы другие пользователи видели ваши ФИО, укажите позывной на форуме — он будет отображаться вместо ваших настоящих данных</p>
+          <p class="annotation__paragraph">Требования к загружаемому фото:</p>
+          <ul>
+            <li>разрешение не менее 640x640px</li>
+            <li>размер не более 3 МБ</li>
+          </ul>
+        </div>
+        <div class="annotation__small">
+          <p class="annotation__paragraph">Номер телефона используется как уникальный идентификатор пользователя, поэтому его нельзя поменять вручную</p>
+          <p class="annotation__paragraph">Если по какой-то причине у вас нет доступа к номеру телефона на который вы регистрировали аккаунт, напишите в поддержку</p>
+          <p class="annotation__paragraph">Email нужен для восстановления пароля</p>
+        </div>
         <div class="profile-edit-card profile-edit-card__personal-data">
           <div class="profile-edit-card__container">
             <h2 class="profile-edit-card__heading">Личные данные</h2>
@@ -116,18 +130,18 @@
               <p class="profile-form__input-title">ФИО</p>
               <label for="profile-name">
                 <input
-                  class="profile-form__item profile-form__item_action_text"
+                  class="profile-form__item profile-form__item_action_text profile-form__pen-icon"
                   type="text"
                   name="profile-name"
                   id="profile-name"
-                  placeholder="ФИО"
+                  placeholder="ФИО" 
                 />
               </label>
 
               <p class="profile-form__input-title">Дата рождения</p>
               <label for="profile-date-of-birth">
                 <input
-                  class="profile-form__item profile-form__item_action_text"
+                  class="profile-form__item profile-form__item_action_text profile-form__pen-icon"
                   type="text"
                   name="profile-date-of-birth"
                   placeholder="Дата рождения"
@@ -138,7 +152,7 @@
               <p class="profile-form__input-title">Географический район</p>
               <label for="profile-location">
                 <input
-                  class="profile-form__item profile-form__item_action_text"
+                  class="profile-form__item profile-form__item_action_text profile-form__pen-icon"
                   type="text"
                   name="profile-location"
                   placeholder="Географический регион"
@@ -149,7 +163,7 @@
               <p class="profile-form__input-title">Позывной на форуме</p>
               <label for="profile-nickname">
                 <input
-                  class="profile-form__item profile-form__item_action_text"
+                  class="profile-form__item profile-form__item_action_text profile-form__pen-icon"
                   type="text"
                   name="profile-nickname"
                   placeholder="Позывной"
@@ -160,7 +174,7 @@
               <p class="profile-form__input-title">Фото</p>
               <label for="profile-avatar">
                 <input
-                  class="profile-form__item profile-form__item_action_image"
+                  class="profile-form__item profile-form__item_action_image profile-form__clip-icon"
                   type="image"
                   name="profile-avatar"
                   placeholder="Фото"
@@ -203,7 +217,7 @@
               <p class="profile-form__input-title">Email</p>
               <label for="profile-email">
                 <input
-                  class="profile-form__item profile-form__item_action_email"
+                  class="profile-form__item profile-form__item_action_email profile-form__pen-icon"
                   type="email"
                   name="profile-email"
                   placeholder="anna@liza-alert.ru"
@@ -214,7 +228,7 @@
               <p class="profile-form__input-title">Пароль</p>
               <label for="profile-location">
                 <input
-                  class="profile-form__item profile-form__item_action_text"
+                  class="profile-form__item profile-form__item_action_text profile-form__pen-icon"
                   type="password"
                   name="profile-password"
                   placeholder="Пароль"

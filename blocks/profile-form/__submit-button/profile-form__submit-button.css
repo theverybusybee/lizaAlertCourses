@@ -11,3 +11,7 @@
   line-height: 1.33;
   cursor: pointer;
 }
+.profile-form__submit-button:hover {
+  background-color: #FF6600;
+  color: white;
+}

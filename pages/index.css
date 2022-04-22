@@ -15,7 +15,7 @@
 @import url(../blocks/menu/__link/menu__link.css);
 @import url(../blocks/menu/__link/_active/menu__link_active.css);
 @import url(../blocks/menu/__icon/menu__icon.css);
-@import url(../blocks/menu/__icon/menu__icon2.css);
+@import url(../blocks/menu/__icon2/menu__icon2.css);
 
 /* heading */
 @import url(../blocks/heading/heading.css);
@@ -44,3 +44,10 @@
 @import url(../blocks/profile-form/__input-title/profile-form__input-title.css);
 @import url(../blocks/profile-form/__item/profile-form__item.css);
 @import url(../blocks/profile-form/__submit-button/profile-form__submit-button.css);
+@import url(../blocks/profile-form/__pen-icon/profile-form__pen-icon.css);
+
+/*annotation*/
+@import url(../blocks/annotation/annotation.css);
+@import url(../blocks/annotation/__small/annotation__small.css);
+@import url(../blocks/annotation/__paragraph/annotation__paragraph.css);
+@import url(../blocks/profile-form/__clip-icon/profile-form__clip-icon.css);
