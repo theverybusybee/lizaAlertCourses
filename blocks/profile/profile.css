@@ -1,0 +1,10 @@
+.profile {
+    margin: 32px auto 40px;
+    max-width: 1320px;
+    display: grid;
+    grid-template-columns: 312px 1fr 312px;
+    gap: 24px;
+    grid-template-areas: 
+    'profile-info personal-data annotation-personal-data'
+    '. account annotation-account';
+}
