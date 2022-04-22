@@ -1,0 +1,10 @@
+.profile-form__item_action_file {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.profile-form__label_type_file {
+  cursor: pointer;
+  
+}
