@@ -19,6 +19,42 @@
 /* heading */
 @import url(../blocks/heading/heading.css);
 
+/* courses */
+@import url(../blocks/courses/courses.css);
+
+/* filters */
+@import url(../blocks/filters/filters.css);
+@import url(../blocks/filters/__container/filters__container.css);
+@import url(../blocks/filters/__header/filters__header.css);
+@import url(../blocks/filters/__title/filters__title.css);
+@import url(../blocks/filters/__delete-button/filters__delete-button.css);
+@import url(../blocks/filters/__block/filters__block.css);
+@import url(../blocks/filters/__categories/filters__categories.css);
+@import url(../blocks/filters/__name-block/filters__name-block.css);
+@import url(../blocks/filters/__open-button/filters__open-button.css);
+@import url(../blocks/filters/__options/filters__options.css);
+@import url(../blocks/filters/__element/filters__element.css);
+@import url(../blocks/filters/__box/filters__box.css);
+@import url(../blocks/filters/__checkbox-image/filters__checkbox-image.css);
+@import url(../blocks/filters/__checkbox-name/filters__checkbox-name.css);
+
+/* cards */
+@import url(../blocks/cards/__item/cards__item.css);
+@import url(../blocks/cards/__title/cards__title.css);
+@import url(../blocks/cards/__user-level/cards__user-level.css);
+@import url(../blocks/cards/__main-info/cards__main-info.css);
+@import url(../blocks/cards/__description/cards__description.css);
+@import url(../blocks/cards/__additional-info/cards__additional-info.css);
+@import url(../blocks/cards/__lessons-info/cards__lessons-info.css);
+@import url(../blocks/cards/__lessons-quantity/cards__lessons-quantity.css);
+@import url(../blocks/cards/__lessons-time/cards__lessons-time.css);
+@import url(../blocks/cards/__button/cards__button.css);
+@import url(../blocks/cards/__item-image/cards__item-image.css);
+@import url(../blocks/cards/__button/_active/cards__button_active.css);
+@import url(../blocks/cards/__button/_disabled/cards__button_disabled.css);
+@import url(../blocks/cards/__user-level-bg/cards__user-level-bg.css);
+@import url(../blocks/cards/__lesson-icon/cards__lesson-icon.css);
+
 /* profile */
 @import url(../blocks/profile/profile.css);
 

@@ -1,0 +1,11 @@
+.filters__box {
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.filters__box:checked + .filters__checkbox-image {
+  background-image: url(../../../images/logos/Vector_active.png);
+}
+
