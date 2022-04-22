@@ -35,12 +35,10 @@
 @import url(../blocks/filters/__options/filters__options.css);
 @import url(../blocks/filters/__element/filters__element.css);
 @import url(../blocks/filters/__box/filters__box.css);
-@import url(../blocks/filters/__label/filters__label.css);
 @import url(../blocks/filters/__checkbox-image/filters__checkbox-image.css);
 @import url(../blocks/filters/__checkbox-name/filters__checkbox-name.css);
 
 /* cards */
-@import url(../blocks/cards/);
 @import url(../blocks/cards/__item/cards__item.css);
 @import url(../blocks/cards/__title/cards__title.css);
 @import url(../blocks/cards/__user-level/cards__user-level.css);
