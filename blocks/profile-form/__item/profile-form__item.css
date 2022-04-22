@@ -14,3 +14,7 @@
 .profile-form__item::-webkit-input-placeholder {
   color: rgba(147, 151, 163, 1);
 }
+
+.profile-form__item:hover {
+  border: 3px solid #FF6600;
+}
