@@ -1,0 +1,22 @@
+.profile__exit-button {
+    background: #FFFFFF;
+    border: 1.2px solid #E6E7EB;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin-top: 16px;
+    color: #FF6600;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    align-items: center;
+    padding: 12px 24px;
+    position: static;
+    min-width: 247px;
+    left: calc(50% - 247px/2);
+    top: 0%;
+    bottom: 0%;
+    cursor: pointer;
+}
+.profile__exit-button:hover {
+    border-color: #FF6600;
+}
