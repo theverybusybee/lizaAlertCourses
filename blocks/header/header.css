@@ -1,6 +1,7 @@
 .header {
 	margin: 0 auto;
 	padding: 24px 60px;
+	min-width: 100%;
   box-sizing: border-box;
 	grid-area: header;
 	display: flex;
@@ -9,6 +10,7 @@
 	position: sticky;
 	z-index: 1;
 	top: 0;
+	left: 0;
 	background-color: #fff;
 	box-shadow: 0 0 5px rgba(231, 232, 235, 0.6);
 }
