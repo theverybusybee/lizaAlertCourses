@@ -1,9 +1,7 @@
 .header {
-	margin: 0 auto;
 	padding: 24px 60px;
-	min-width: 100%;
-  box-sizing: border-box;
-	grid-area: header;
+	min-width: 950px;
+	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
