@@ -14,3 +14,4 @@ Liza Alert - добровольческое некоммерческое общ�
 ° методология БЭМ 
 Редактор кода: visual studio code 
 Ссылка на GitHub Pages:
+https://theverybusybee.github.io/lizaAlertCourses/
