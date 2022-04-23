@@ -10,7 +10,12 @@
   color: #212329;
 }
 
-.profile-form__item::-webkit-input-placeholder, .profile-form__item::-moz-placeholder {
+.profile-form__item::-webkit-input-placeholder {
+  color: #9397a3;
+  opacity: 1;
+}
+
+.profile-form__item::-moz-placeholder {
   color: #9397a3;
   opacity: 1;
 }
