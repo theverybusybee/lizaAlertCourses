@@ -39,6 +39,8 @@
 @import url(../blocks/filters/__checkbox-name/filters__checkbox-name.css);
 
 /* cards */
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/__container/cards__container.css);
 @import url(../blocks/cards/__item/cards__item.css);
 @import url(../blocks/cards/__title/cards__title.css);
 @import url(../blocks/cards/__user-level/cards__user-level.css);
