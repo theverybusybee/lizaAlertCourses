@@ -23,3 +23,7 @@
 .profile-form__item:hover {
   border-color: #FF6600;
 }
+
+.profile-form__item::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
