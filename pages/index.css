@@ -37,6 +37,8 @@
 @import url(../blocks/filters/__box/filters__box.css);
 @import url(../blocks/filters/__checkbox-image/filters__checkbox-image.css);
 @import url(../blocks/filters/__checkbox-name/filters__checkbox-name.css);
+@import url(../blocks/filters/__tags-container/filter__tags-container.css);
+@import url(../blocks/filters/__tags-delete/filter__tags-delete.css);
 
 /* cards */
 @import url(../blocks/cards/cards.css);
