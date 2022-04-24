@@ -95,3 +95,42 @@ function doneAddCard (elementLink, elementTitle, elementText) {
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------добавление дефолтных карточек на страницу-------------------------------------------------------------------*/
+
+
+const userLeverCheckboxPro = document.querySelector('#tag-pro');
+const userLeverCheckboxMedium = document.querySelector('#tag-medium');
+const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
+const tagContainer = document.querySelector('.filter__tags-container');
+const tagTemplate = document.querySelector('#tag-template').content
+const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
+
+userLeverCheckboxPro.addEventListener('change', function(){
+  if(userLeverCheckboxPro.checked) {
+    console.log('You are pro!')
+    
+    tagContainer.appendChild(tagElement)
+  } else {
+    console.log('Unchecked')
+    tagElement.remove()
+  }
+})
+ 
+userLeverCheckboxMedium.addEventListener('change', function(){
+  if(userLeverCheckboxMedium.checked) {
+    console.log('You are medium')
+    tagElement.textContent = 'Бывалый'
+    tagContainer.appendChild(tagElement)
+  } else {
+    console.log('Unchecked')
+    tagElement.remove()
+  }
+})
+ 
+userLeverCheckboxNewbie.addEventListener('change', function(){
+  if(userLeverCheckboxNewbie.checked) {
+    console.log('Noob')
+  } else {
+    console.log('Unchecked')
+  }
+})
+ 
