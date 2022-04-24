@@ -165,7 +165,7 @@
                 <ul class="filters__options">
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input id="tag-newbie" class="filters__box" type="checkbox" />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Новичок</span>
                     </label>
@@ -173,7 +173,7 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input id="tag-medium" class="filters__box" type="checkbox" />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Бывалый</span>
                     </label>
@@ -181,7 +181,7 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input id="tag-pro" class="filters__box" type="checkbox" />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Профессионал</span>
                     </label>
@@ -230,60 +230,18 @@
               </div>
             </div>
           </aside>
+
           <div class="filter__tags-container">
-            <div class="cards__user-level-bg">
-              <p id="beginner-tag" class="cards__user-level">Новичок</p>
-              <button
-                type="button"
-                id="delete_button"
-                class="filter__tags-delete"
-              ></button>
-            </div>
-
-            <div class="cards__user-level-bg">
-              <p id="beginner-tag" class="cards__user-level">Бывалый</p>
-              <button
-                type="button"
-                id="delete_button"
-                class="filter__tags-delete"
-              ></button>
-            </div>
-
-            <div class="cards__user-level-bg">
-              <p id="beginner-tag" class="cards__user-level">Профессионал</p>
-              <button
-                type="button"
-                id="delete_button"
-                class="filter__tags-delete"
-              ></button>
-            </div>
-
-            <div class="cards__user-level-bg">
-              <p id="beginner-tag" class="cards__user-level">Новичок</p>
-              <button
-                type="button"
-                id="delete_button"
-                class="filter__tags-delete"
-              ></button>
-            </div>
-
-            <div class="cards__user-level-bg">
-              <p id="beginner-tag" class="cards__user-level">Новичок</p>
-              <button
-                type="button"
-                id="delete_button"
-                class="filter__tags-delete"
-              ></button>
-            </div>
-
-            <div class="cards__user-level-bg">
-              <p id="beginner-tag" class="cards__user-level">Профессионал</p>
-              <button
-                type="button"
-                id="delete_button"
-                class="filter__tags-delete"
-              ></button>
-            </div>
+            <template id="tag-template">
+              <div id="tag-content" class="cards__user-level-bg">
+                <p id="tag-title" class="cards__user-level"></p>
+                <button
+                  type="button"
+                  id="delete_button"
+                  class="filter__tags-delete"
+                ></button>
+              </div>
+            </template>
           </div>
           <section class="cards">
             <ul class="cards__container">
