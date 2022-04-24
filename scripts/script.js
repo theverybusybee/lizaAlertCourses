@@ -101,34 +101,45 @@ const userLeverCheckboxPro = document.querySelector('#tag-pro');
 const userLeverCheckboxMedium = document.querySelector('#tag-medium');
 const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
 const tagContainer = document.querySelector('.filter__tags-container');
-const tagTemplate = document.querySelector('#tag-template').content
-const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
+
+
+function addTag(item) {
+  const tagTemplate = document.querySelector('#tag-template').content;
+  const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
+  const tagDeleteBtn = tagElement.querySelector('#delete_button');
+  const tagTitle = tagElement.querySelector('#tag-title');
+
+  tagTitle.textContent = item
+
+  tagDeleteBtn.addEventListener('click', function() {
+    tagElement.remove()
+  });
+
+return tagElement
+}
 
 userLeverCheckboxPro.addEventListener('change', function(){
   if(userLeverCheckboxPro.checked) {
     console.log('You are pro!')
-    
-    tagContainer.appendChild(tagElement)
+    tagContainer.append(addTag('Профессионал'))
   } else {
     console.log('Unchecked')
-    tagElement.remove()
   }
 })
- 
+
 userLeverCheckboxMedium.addEventListener('change', function(){
   if(userLeverCheckboxMedium.checked) {
     console.log('You are medium')
-    tagElement.textContent = 'Бывалый'
-    tagContainer.appendChild(tagElement)
+    tagContainer.append(addTag('Бывалый'))
   } else {
     console.log('Unchecked')
-    tagElement.remove()
   }
 })
  
 userLeverCheckboxNewbie.addEventListener('change', function(){
   if(userLeverCheckboxNewbie.checked) {
     console.log('Noob')
+    tagContainer.append(addTag('Новичок'))
   } else {
     console.log('Unchecked')
   }
