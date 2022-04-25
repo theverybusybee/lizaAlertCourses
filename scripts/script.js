@@ -143,3 +143,14 @@ userLeverCheckboxNewbie.addEventListener('change', function(){
   }
 })
  
+/* Очистить чекбоксы */
+function uncheck() {
+ let uncheck = document.getElementsByTagName('input');
+ for(let i=0; i < uncheck.length; i++)
+ {
+  if(uncheck[i].type=='checkbox')
+  {
+   uncheck[i].checked=false;
+  }
+ }
+}
