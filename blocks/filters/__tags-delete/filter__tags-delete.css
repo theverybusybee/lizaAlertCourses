@@ -1,0 +1,13 @@
+.filter__tags-delete {
+  background: url(../../../images/logos/close-logo_gray.svg) no-repeat;
+  width: 20px;
+  border: none;
+  position: relative;
+  right: -6px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.filter__tags-delete:hover {
+  opacity: 0.7;
+}
