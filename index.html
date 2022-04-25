@@ -60,13 +60,13 @@
                 <h3 class="filters__title">Фильтры</h3>
                 <button class="filters__delete-button">очистить</button>
               </div>
-              <div class="filters__block">
+              <div class="filters__block item">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Категория</h4>
-                  <button type="button" class="filters__open-button"></button>
+                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
                 </div>
 
-                <ul class="filters__options">
+                <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
                     <label class="filters__label">
                       <input class="filters__box" type="checkbox" />
@@ -112,9 +112,9 @@
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Тематика</h4>
-                  <button type="button" class="filters__open-button"></button>
+                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
                 </div>
-                <ul class="filters__options">
+                <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
                     <label class="filters__label">
                       <input class="filters__box" type="checkbox" />
@@ -160,9 +160,9 @@
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Уровень</h4>
-                  <button type="button" class="filters__open-button"></button>
+                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
                 </div>
-                <ul class="filters__options">
+                <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
                     <label class="filters__label">
                       <input class="filters__box" type="checkbox" />
@@ -192,9 +192,9 @@
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Статус</h4>
-                  <button type="button" class="filters__open-button"></button>
+                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
                 </div>
-                <ul class="filters__options">
+                <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
                     <label class="filters__label">
                       <input class="filters__box" type="checkbox" />
@@ -376,5 +376,6 @@
     </div>
     <!-- /.page__container -->
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/filter-accordion.js"></script>
   </body>
 </html>
