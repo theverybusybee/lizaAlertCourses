@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2022 by original authors @ fontello.com</metadata>
+<defs>
+<font id="asterisk" horiz-adv-x="1000" >
+<font-face font-family="asterisk" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="asterisk-for-webkit" unicode="&#x2022;" d="M189 220c0 0 6 123 6 123 0 0-104-66-104-66 0 0-36 62-36 62 0 0 110 56 110 56 0 0-110 56-110 56 0 0 36 62 36 62 0 0 104-66 104-66 0 0-6 123-6 123 0 0 72 0 72 0 0 0-6-123-6-123 0 0 104 66 104 66 0 0 36-62 36-62 0 0-110-56-110-56 0 0 110-56 110-56 0 0-36-62-36-62 0 0-104 66-104 66 0 0 6-123 6-123 0 0-72 0-72 0z" horiz-adv-x="450" />
+
+<glyph glyph-name="asterisk-for-moz" unicode="&#x25cf;" d="M189 220c0 0 6 123 6 123 0 0-104-66-104-66 0 0-36 62-36 62 0 0 110 56 110 56 0 0-110 56-110 56 0 0 36 62 36 62 0 0 104-66 104-66 0 0-6 123-6 123 0 0 72 0 72 0 0 0-6-123-6-123 0 0 104 66 104 66 0 0 36-62 36-62 0 0-110-56-110-56 0 0 110-56 110-56 0 0-36-62-36-62 0 0-104 66-104 66 0 0 6-123 6-123 0 0-72 0-72 0z" horiz-adv-x="450" />
+</font>
+</defs>
+</svg>

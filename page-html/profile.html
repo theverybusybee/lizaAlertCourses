@@ -144,40 +144,44 @@
                 <p class="profile-form__input-title">ФИО</p>
                 <label for="profile-name">
                   <input
-                    class="profile-form__item profile-form__item_action_text profile-form__item_icon_pen"
+                    class="profile-form__item profile-form__item_type_text profile-form__item_icon_pen"
                     type="text"
                     name="profile-name"
                     id="profile-name"
+                    oninput="testFunction()"
                   />
                 </label>
 
                 <p class="profile-form__input-title">Дата рождения</p>
                 <label for="profile-date-of-birth">
                   <input
-                    class="profile-form__item profile-form__item_action_date profile-form__item_icon_pen"
+                    class="profile-form__item profile-form__item_type_date profile-form__item_icon_pen"
                     type="date"
                     name="profile-date-of-birth"
                     id="profile-date-of-birth"
+                    oninput="testFunction()"
                   />
                 </label>
 
                 <p class="profile-form__input-title">Географический регион</p>
                 <label for="profile-location">
                   <input
-                    class="profile-form__item profile-form__item_action_text profile-form__item_icon_pen"
+                    class="profile-form__item profile-form__item_type_text profile-form__item_icon_pen"
                     type="text"
                     name="profile-location"
                     id="profile-location"
+                    oninput="testFunction()"
                   />
                 </label>
 
                 <p class="profile-form__input-title">Позывной на форуме</p>
                 <label for="profile-nickname">
                   <input
-                    class="profile-form__item profile-form__item_action_text profile-form__item_icon_pen"
+                    class="profile-form__item profile-form__item_type_text profile-form__item_icon_pen"
                     type="text"
                     name="profile-nickname"
                     id="profile-nickname"
+                    oninput="testFunction()"
                   />
                 </label>
 
@@ -187,7 +191,7 @@
                   for="profile-avatar"
                 >
                   <input
-                    class="profile-form__item profile-form__item_action_file"
+                    class="profile-form__item profile-form__item_type_file"
                     type="file"
                     name="profile-avatar"
                     id="profile-avatar"
@@ -199,6 +203,7 @@
                   class="profile-form__submit-button"
                   type="submit"
                   title="Сохранить"
+                  disabled
                 >
                   Сохранить изменения
                 </button>
@@ -218,32 +223,35 @@
                 <p class="profile-form__input-title">Номер телефона</p>
                 <label for="profile-number">
                   <input
-                    class="profile-form__item profile-form__item_action_number"
+                    class="profile-form__item profile-form__item_type_number"
                     type="tel"
                     name="profile-number"
                     id="profile-number"
                     placeholder="+7 123 456 78 90"
+                    oninput="testFunction()"
                   />
                 </label>
 
                 <p class="profile-form__input-title">Email</p>
                 <label for="profile-email">
                   <input
-                    class="profile-form__item profile-form__item_action_email profile-form__item_icon_pen"
+                    class="profile-form__item profile-form__item_type_email profile-form__item_icon_pen"
                     type="email"
                     name="profile-email"
                     placeholder="anna@liza-alert.ru"
                     id="profile-email"
+                    oninput="testFunction()"
                   />
                 </label>
 
                 <p class="profile-form__input-title">Пароль</p>
                 <label for="profile-password">
                   <input
-                    class="profile-form__item profile-form__item_action_text profile-form__item_icon_pen"
+                    class="profile-form__item profile-form__item_type_password profile-form__item_icon_pen"
                     type="password"
                     name="profile-password"
                     id="profile-password"
+                    oninput="testFunction()"
                   />
                 </label>
 
@@ -252,6 +260,7 @@
                   class="profile-form__submit-button"
                   type="submit"
                   title="Сохранить"
+                  disabled
                 >
                   Сохранить изменения
                 </button>

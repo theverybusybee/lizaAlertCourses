@@ -18,3 +18,13 @@
     url(./Golos/Golos-Bold/Golos-Text_Bold.woff) format("woff");
   font-weight: 700;
 }
+
+@font-face {
+  font-family: 'Font for password';
+  src:
+    url('./Font-for-password/asterisk.woff2?0000') format('woff2'),
+    url('./Font-for-password/asterisk.woff?0000') format('woff'),
+    url('./Font-for-password/asterisk.svg?0000') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
