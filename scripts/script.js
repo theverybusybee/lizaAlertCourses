@@ -110,6 +110,7 @@ function addTag(item) {
   const tagTitle = tagElement.querySelector('#tag-title');
 
   tagTitle.textContent = item
+ 
 
   tagDeleteBtn.addEventListener('click', function() {
     tagElement.remove()
@@ -118,31 +119,6 @@ function addTag(item) {
 return tagElement
 }
 
-/* Проверка статуса чекбокса */
-userLeverCheckboxPro.addEventListener('change', function(){
-  if(userLeverCheckboxPro.checked) {
-    tagContainer.append(addTag('Профессионал'))
-  } else {
-    tagContainer.querySelector('#tag-content').remove(addTag('Профессионал'))
-  }
-})
-
-userLeverCheckboxMedium.addEventListener('change', function(){
-  if(userLeverCheckboxMedium.checked) {
-    tagContainer.append(addTag('Бывалый'))
-  } else {
-    tagContainer.querySelector('#tag-content').remove(addTag('Бывалый'))
-  }
-})
- 
-userLeverCheckboxNewbie.addEventListener('change', function(){
-  if(userLeverCheckboxNewbie.checked) {
-    tagContainer.append(addTag('Новичок'))
-  } else {
-    tagContainer.querySelector('#tag-content').remove(addTag('Новичок'))
-  }
-})
- 
 /* Очистить чекбоксы */
 function uncheck() {
  let uncheck = document.getElementsByTagName('input');
@@ -154,3 +130,17 @@ function uncheck() {
   }
  }
 }
+// Добавляем тег
+const filterCheckboxButtons = document.querySelectorAll('.filters__box_level');
+const filterCard = document.querySelectorAll('.cards__item');
+
+filterCheckboxButtons.forEach((target) => {
+  target.addEventListener('change', (evt) => {
+    console.log(target.dataset.filter)
+    if(target.checked) {
+      tagContainer.append(addTag(target.dataset.filter))
+    } else {
+      tagContainer.querySelector('#tag-content').remove(addTag(target.dataset.filter))
+    }
+  })
+})
