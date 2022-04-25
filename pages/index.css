@@ -82,7 +82,8 @@
 @import url(../blocks/profile-form/__item/profile-form__item.css);
 @import url(../blocks/profile-form/__label/_type/profile-form__label_type_file.css);
 @import url(../blocks/profile-form/__submit-button/profile-form__submit-button.css);
-@import url(../blocks/profile-form/__item/_action/profile-form__item_action_file.css);
+@import url(../blocks/profile-form/__item/_type/profile-form__item_action_file.css);
+@import url(../blocks/profile-form/__item/_type/profile-form__item_type_password.css);
 @import url(../blocks/profile-form/__item/_icon/profile-form__item_icon_pen.css);
 
 /* annotation */
