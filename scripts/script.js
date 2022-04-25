@@ -97,9 +97,6 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
 /*-------------------------------------------------------добавление дефолтных карточек на страницу-------------------------------------------------------------------*/
 
 
-  
-  
-
 
 
 
@@ -111,3 +108,55 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
  * @param {*} elementLevel 
  * @param {*} elementButton 
  */
+
+
+
+
+/* Добавление тегов под блоком фильтр */
+const userLeverCheckboxPro = document.querySelector('#tag-pro');
+const userLeverCheckboxMedium = document.querySelector('#tag-medium');
+const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
+const tagContainer = document.querySelector('.filter__tags-container');
+const tagTemplate = document.querySelector('#tag-template').content;
+
+
+function addTag(item) {
+  const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
+  const tagDeleteBtn = tagElement.querySelector('#delete_button');
+  const tagTitle = tagElement.querySelector('#tag-title');
+
+  tagTitle.textContent = item
+ 
+
+  tagDeleteBtn.addEventListener('click', function() {
+    tagElement.remove()
+  });
+
+return tagElement
+}
+
+/* Очистить чекбоксы */
+function uncheck() {
+ let uncheck = document.getElementsByTagName('input');
+ for(let i=0; i < uncheck.length; i++)
+ {
+  if(uncheck[i].type=='checkbox')
+  {
+   uncheck[i].checked=false;
+  }
+ }
+}
+// Добавляем тег
+const filterCheckboxButtons = document.querySelectorAll('.filters__box_level');
+const filterCard = document.querySelectorAll('.cards__item');
+
+filterCheckboxButtons.forEach((target) => {
+  target.addEventListener('change', (evt) => {
+    console.log(target.dataset.filter)
+    if(target.checked) {
+      tagContainer.append(addTag(target.dataset.filter))
+    } else {
+      tagContainer.querySelector('#tag-content').remove(addTag(target.dataset.filter))
+    }
+  })
+})

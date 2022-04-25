@@ -58,7 +58,7 @@
             <div class="filters__container">
               <div class="filters__header">
                 <h3 class="filters__title">Фильтры</h3>
-                <button class="filters__delete-button">очистить</button>
+                <button class="filters__delete-button" onclick="uncheck();">очистить</button>
               </div>
               <div class="filters__block">
                 <div class="filters__categories">
@@ -244,9 +244,7 @@
             </template>
           </div>
           <section class="cards">
-
             <ul class="cards__container">
-
               <template id="tamplate-card">
                 <li  class="cards__item">
                   <img
@@ -263,6 +261,7 @@
                     <p class="cards__description">
                       Создание ориентировок, заказ карт, связь через мини АТС,
                       обеспечение поиска
+ 
                     </p>
                   </div>
 
@@ -291,8 +290,6 @@
                   </div>
                 </li>
               </template>
-
-              
             </ul>
           </section>
         </div>
