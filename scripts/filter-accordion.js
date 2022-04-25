@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const accordions = document.querySelectorAll('.filters__options');
+    const accordions = document.querySelectorAll('.filters__block');
 
     accordions.forEach(el => {
         el.addEventListener('click', (e) => {

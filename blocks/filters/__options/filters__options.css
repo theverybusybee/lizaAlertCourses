@@ -11,6 +11,7 @@
 	box-sizing: content-box;
 }
 
-.open .accordion__content {
+.open .filters__options {
 	opacity: 1;
+  margin-bottom: 33px;
 }
