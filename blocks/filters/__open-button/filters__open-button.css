@@ -12,5 +12,5 @@
 }
 
 .open .filters__open-button {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
