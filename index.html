@@ -58,7 +58,7 @@
             <div class="filters__container">
               <div class="filters__header">
                 <h3 class="filters__title">Фильтры</h3>
-                <button class="filters__delete-button">очистить</button>
+                <button class="filters__delete-button" onclick="uncheck();">очистить</button>
               </div>
               <div class="filters__block">
                 <div class="filters__categories">
@@ -163,9 +163,10 @@
                   <button type="button" class="filters__open-button" aria-expanded="false"></button>
                 </div>
                 <ul class="filters__options" aria-hidden="true">
+
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input id="tag-newbie" class="filters__box filters__box_level" type="checkbox" data-filter="Новичок"/>
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Новичок</span>
                     </label>
@@ -173,7 +174,7 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input id="tag-medium" class="filters__box filters__box_level" type="checkbox" data-filter="Бывалый"/>
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Бывалый</span>
                     </label>
@@ -181,9 +182,9 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input id="tag-pro" class="filters__box filters__box_level" type="checkbox" data-filter="Профессионал"/>
                       <span class="filters__checkbox-image"></span>
-                      <span class="filters__checkbox-name">Профессионал</span>
+                      <span id='tag-pro-name' class="filters__checkbox-name">Профессионал</span>
                     </label>
                   </li>
                 </ul>
@@ -231,140 +232,165 @@
             </div>
           </aside>
 
+          <div class="filter__tags-container">
+            <template id="tag-template">
+              <div id="tag-content" class="cards__user-level-bg">
+                <p id="tag-title" class="cards__user-level"></p>
+                <button
+                  type="button"
+                  id="delete_button"
+                  class="filter__tags-delete"
+                ></button>
+              </div>
+            </template>
+          </div>
           <section class="cards">
             <ul class="cards__container">
-              <li class="cards__item">
-                <img
-                  class="cards__item-image"
-                  src="./images/cards/laptop.png"
-                  alt="Ноутбук"
-                />
-                <div class="cards__main-info">
-                  <h2 class="cards__title">Инфогруппа</h2>
-                  <div class="cards__user-level-bg">
-                    <p id="beginner" class="cards__user-level">Новичок</p>
+              <template id="card-enroll">
+                <li id="card-enrollContent" class="cards__item">
+                  <img
+                    class="cards__item-image"
+                    src="./images/cards/laptop.png"
+                    alt="Ноутбук"
+                    id="image-enroll"
+                  />
+                  <div class="cards__main-info">
+                    <h2 class="cards__title" id="title-enroll">Инфогруппа</h2>
+                    <div class="cards__user-level-bg">
+                      <p id="beginner" class="cards__user-level">Новичок</p>
+                    </div>
+                    <p class="cards__description" id="text-enroll">
+                      Создание ориентировок, заказ карт, связь через мини АТС,
+                      обеспечение поиска
+                    </p>
                   </div>
-                  <p class="cards__description">
-                    Создание ориентировок, заказ карт, связь через мини АТС,
-                    обеспечение поиска
-                  </p>
-                </div>
 
-                <div class="cards__additional-info">
-                  <ul class="cards__lessons-info">
-                    <li class="cards__lessons-quantity">
-                      <img
-                        class="cards__lesson-icon"
-                        src="./images/logos/open-book_black.svg"
-                        alt="open-book"
-                      />
-                      144 Занятия
-                    </li>
-                    <li class="cards__lessons-time">
-                      <img
-                        class="cards__lesson-icon"
-                        src="./images/logos/clock_black.svg"
-                        alt="black-clock"
-                      />
-                      144 ч
-                    </li>
-                  </ul>
-                  <button type="button" class="cards__button"
-                    >Записаться</button
-                  >
-                </div>
-              </li>
-
-              <li class="cards__item">
-                <img
-                  class="cards__item-image"
-                  src="./images/cards/german-shepherd.png"
-                  alt="Овчарка"
-                />
-                <div class="cards__main-info">
-                  <h2 class="cards__title">Кинологическое направление</h2>
-                  <div class="cards__user-level-bg">
-                    <p id="medium" class="cards__user-level">Бывалый</p>
+                  <div class="cards__additional-info">
+                    <ul class="cards__lessons-info">
+                      <li class="cards__lessons-quantity">
+                        <img
+                          class="cards__lesson-icon"
+                          src="./images/logos/open-book_black.svg"
+                          alt="open-book"
+                        />
+                        144 Занятия
+                      </li>
+                      <li class="cards__lessons-time">
+                        <img
+                          class="cards__lesson-icon"
+                          src="./images/logos/clock_black.svg"
+                          alt="black-clock"
+                        />
+                        144 ч
+                      </li>
+                    </ul>
+                    <button type="button" class="cards__button">
+                      Записаться
+                    </button>
                   </div>
-                  <p class="cards__description">
-                    Поисково-спасательная работа, следовая работа,
-                    а так же поиск тел погибших с помощью собак
-                  </p>
-                </div>
+                </li>
+              </template>
 
-                <div class="cards__additional-info">
-                  <ul class="cards__lessons-info">
-                    <li class="cards__lessons-quantity">
-                      <img
-                        class="cards__lesson-icon"
-                        src="./images/logos/open-book_black.svg"
-                        alt="open-book"
-                      />
-                      144 Занятия
-                    </li>
-                    <li class="cards__lessons-time">
-                      <img
-                        class="cards__lesson-icon"
-                        src="./images/logos/clock_black.svg"
-                        alt="black-clock"
-                      />
-                      144 ч
-                    </li>
-                  </ul>
-                  <button
-                    type="button"
-                    class="cards__button cards__button_active"
-                  >
-                    Продолжить
-                  </button>
-                </div>
-              </li>
-
-              <li class="cards__item">
-                <img
-                  class="cards__item-image"
-                  src="./images/cards/orange-jacket.png"
-                  alt="Оранжевая жилетка"
-                />
-                <div class="cards__main-info">
-                  <h2 class="cards__title">Новичковая</h2>
-                  <div class="cards__user-level-bg">
-                    <p id="advanced" class="cards__user-level">Профессионал</p>
+              <template id="card-continue">
+                <li id="card-continueContent" class="cards__item">
+                  <img
+                    class="cards__item-image"
+                    src="./images/cards/german-shepherd.png"
+                    alt="Овчарка"
+                    id="image-continue"
+                  />
+                  <div class="cards__main-info">
+                    <h2 class="cards__title" id="title-continue">
+                      Кинологическое направление
+                    </h2>
+                    <div class="cards__user-level-bg">
+                      <p id="medium" class="cards__user-level">Бывалый</p>
+                    </div>
+                    <p class="cards__description" id="text-continue">
+                      Поисково-спасательная работа, следовая работа,
+                      а так же поиск тел погибших с помощью собак
+                    </p>
                   </div>
-                  <p class="cards__description">
-                    Короткое описание курса. людей в лесу и в городе.
-                    Все поисковые мероприятия организуются силами добровольцев
-                    «ЛизаАлер…
-                  </p>
-                </div>
 
-                <div class="cards__additional-info">
-                  <ul class="cards__lessons-info">
-                    <li class="cards__lessons-quantity">
-                      <img
-                        class="cards__lesson-icon"
-                        src="./images/logos/open-book_black.svg"
-                        alt="open-book"
-                      />
-                      144 Занятия
-                    </li>
-                    <li class="cards__lessons-time">
-                      <img
-                        class="cards__lesson-icon"
-                        src="./images/logos/clock_black.svg"
-                        alt="black-clock"
-                      />
-                      144 ч
-                    </li>
-                  </ul>
-                  <button
-                    type="button"
-                    class="cards__button cards__button_disabled"
-                  >
-                    Пройден
-                  </button>
-                </div>
-              </li>
+                  <div class="cards__additional-info">
+                    <ul class="cards__lessons-info">
+                      <li class="cards__lessons-quantity">
+                        <img
+                          class="cards__lesson-icon"
+                          src="./images/logos/open-book_black.svg"
+                          alt="open-book"
+                        />
+                        144 Занятия
+                      </li>
+                      <li class="cards__lessons-time">
+                        <img
+                          class="cards__lesson-icon"
+                          src="./images/logos/clock_black.svg"
+                          alt="black-clock"
+                        />
+                        144 ч
+                      </li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="cards__button cards__button_active"
+                    >
+                      Продолжить
+                    </button>
+                  </div>
+                </li>
+              </template>
+
+              <template id="card-done">
+                <li id="card-doneContent" class="cards__item">
+                  <img
+                    class="cards__item-image"
+                    src="./images/cards/orange-jacket.png"
+                    alt="Оранжевая жилетка"
+                    id="image-done"
+                  />
+                  <div class="cards__main-info">
+                    <h2 class="cards__title" id="title-done">Новичковая</h2>
+                    <div class="cards__user-level-bg">
+                      <p id="advanced" class="cards__user-level">
+                        Профессионал
+                      </p>
+                    </div>
+                    <p class="cards__description" id="text-done">
+                      Короткое описание курса. людей в лесу и в городе.
+                      Все поисковые мероприятия организуются силами добровольцев
+                      «ЛизаАлер…
+                    </p>
+                  </div>
+
+                  <div class="cards__additional-info">
+                    <ul class="cards__lessons-info">
+                      <li class="cards__lessons-quantity">
+                        <img
+                          class="cards__lesson-icon"
+                          src="./images/logos/open-book_black.svg"
+                          alt="open-book"
+                        />
+                        144 Занятия
+                      </li>
+                      <li class="cards__lessons-time">
+                        <img
+                          class="cards__lesson-icon"
+                          src="./images/logos/clock_black.svg"
+                          alt="black-clock"
+                        />
+                        144 ч
+                      </li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="cards__button cards__button_disabled"
+                    >
+                      Пройден
+                    </button>
+                  </div>
+                </li>
+              </template>
             </ul>
           </section>
         </div>
