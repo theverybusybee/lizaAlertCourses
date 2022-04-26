@@ -58,12 +58,18 @@
             <div class="filters__container">
               <div class="filters__header">
                 <h3 class="filters__title">Фильтры</h3>
-                <button class="filters__delete-button" onclick="uncheck();">очистить</button>
+                <button class="filters__delete-button" onclick="uncheck();"
+                  >очистить</button
+                >
               </div>
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Категория</h4>
-                  <button type="button" class="filters__open-button"  aria-expanded="false"></button>
+                  <button
+                    type="button"
+                    class="filters__open-button"
+                    aria-expanded="false"
+                  ></button>
                 </div>
 
                 <ul class="filters__options" aria-hidden="true">
@@ -112,7 +118,11 @@
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Тематика</h4>
-                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
+                  <button
+                    type="button"
+                    class="filters__open-button"
+                    aria-expanded="false"
+                  ></button>
                 </div>
                 <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
@@ -160,13 +170,21 @@
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Уровень</h4>
-                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
+                  <button
+                    type="button"
+                    class="filters__open-button"
+                    aria-expanded="false"
+                  ></button>
                 </div>
                 <ul class="filters__options" aria-hidden="true">
-
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input id="tag-newbie" class="filters__box filters__box_level" type="checkbox" data-filter="Новичок"/>
+                      <input
+                        id="tag-newbie"
+                        class="filters__box filters__box_level"
+                        type="checkbox"
+                        data-filter="Новичок"
+                      />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Новичок</span>
                     </label>
@@ -174,7 +192,12 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input id="tag-medium" class="filters__box filters__box_level" type="checkbox" data-filter="Бывалый"/>
+                      <input
+                        id="tag-medium"
+                        class="filters__box filters__box_level"
+                        type="checkbox"
+                        data-filter="Бывалый"
+                      />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Бывалый</span>
                     </label>
@@ -182,9 +205,16 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input id="tag-pro" class="filters__box filters__box_level" type="checkbox" data-filter="Профессионал"/>
+                      <input
+                        id="tag-pro"
+                        class="filters__box filters__box_level"
+                        type="checkbox"
+                        data-filter="Профессионал"
+                      />
                       <span class="filters__checkbox-image"></span>
-                      <span id='tag-pro-name' class="filters__checkbox-name">Профессионал</span>
+                      <span id="tag-pro-name" class="filters__checkbox-name"
+                        >Профессионал</span
+                      >
                     </label>
                   </li>
                 </ul>
@@ -193,7 +223,11 @@
               <div class="filters__block">
                 <div class="filters__categories">
                   <h4 class="filters__name-block">Статус</h4>
-                  <button type="button" class="filters__open-button" aria-expanded="false"></button>
+                  <button
+                    type="button"
+                    class="filters__open-button"
+                    aria-expanded="false"
+                  ></button>
                 </div>
                 <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
@@ -247,7 +281,7 @@
           <section class="cards">
             <ul class="cards__container">
               <template id="tamplate-card">
-                <li  class="cards__item">
+                <li class="cards__item">
                   <img
                     class="cards__item-image"
                     src="./images/cards/laptop.png"
@@ -255,14 +289,13 @@
                     id="image-card"
                   />
                   <div class="cards__main-info">
-                    <h2 class="cards__title" >Инфогруппа</h2>
+                    <h2 class="cards__title">Инфогруппа</h2>
                     <div class="cards__user-level-bg">
                       <p class="cards__user-level">Новичок</p>
                     </div>
                     <p class="cards__description">
                       Создание ориентировок, заказ карт, связь через мини АТС,
                       обеспечение поиска
- 
                     </p>
                   </div>
 

@@ -50,9 +50,7 @@ accountSubmitButton.addEventListener('submit', (evt) =>
 });
 
 
-inputUsername.value = 'Иванова Анна Сидоровна';
-
-const value = inputUsername.value
+inputUsername.value = profileName.textContent;
 
 function changeSubmitButton(input, submit) {
 input.oninput = function testFunction() {
@@ -63,8 +61,6 @@ input.oninput = function testFunction() {
   }
 }
 }
-
-personalDataForm.forEach
 
 changeSubmitButton(inputUsername, personalDataSubmitButton);
 changeSubmitButton(inputUserLocation, personalDataSubmitButton);
