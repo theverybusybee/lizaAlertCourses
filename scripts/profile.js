@@ -52,6 +52,8 @@ function makeActiveButton(submit) {
   submit.style.cursor = 'pointer';
 };
 
+/*------------------ присваиваем для имени профиля значение инпута ------------------*/
+
 inputUsername.value = profileName.textContent;
 
 /*------------------------ сохраняем введенное имя в профиль ------------------------*/

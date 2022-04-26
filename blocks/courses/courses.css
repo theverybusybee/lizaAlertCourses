@@ -6,6 +6,7 @@
   grid-template-columns: 312px 1fr;
   grid-template-areas: 
   'aside cards'
+  'filter cards'
   '. cards';
   gap: 24px;
 }

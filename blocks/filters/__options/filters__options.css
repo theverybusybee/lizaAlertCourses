@@ -3,4 +3,15 @@
   margin: 0;
   margin-top: 32px;
   list-style: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all 0.3s ease-out;
+  box-sizing: content-box;
+}
+
+.open .filters__options {
+  opacity: 1;
+  margin-bottom: 33px;
 }
