@@ -1,4 +1,6 @@
 .profile-info {
+    padding: 32px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
