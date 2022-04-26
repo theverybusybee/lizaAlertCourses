@@ -2,9 +2,6 @@
   margin: 32px auto;
   padding: 12px 24px;
   display: block;
-  
-  /*background-color: #f60;
-  color: #fff;*/
   border: none;
   border-radius: 16px;
   background: #e6e7eb;
@@ -12,9 +9,5 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
-  cursor: pointer;
-}
-
-.profile-form__submit-button:-moz-user-disabled {
-  cursor: default;
+  cursor: not-allowed;
 }

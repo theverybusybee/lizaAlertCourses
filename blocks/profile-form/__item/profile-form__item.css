@@ -21,7 +21,12 @@
 }
 
 .profile-form__item:hover {
-  border-color: #FF6600;
+  border-color: #f60;
+}
+
+.profile-form__item:focus {
+  outline: none;
+  border-color: #f60;
 }
 
 .profile-form__item::-webkit-calendar-picker-indicator {
