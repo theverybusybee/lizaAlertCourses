@@ -79,23 +79,27 @@ accountForm.addEventListener('submit', (evt) =>
   makeDisabledButton(accountSubmitButton)
 });
 
-/*--------------------- подсвечиваем кнопки при вводе текста ---------------------*/
+/*----------------------- изменяем кнопки при вводе текста -----------------------*/
 
 Array.from(personalDataFormInputs).forEach((input) => {
-   input.oninput = function testFunction() {
-    if (input.value != input.oninput) {
+  const savedInputValue = input.value;
+  input.oninput = function testFunction() {
+    if (savedInputValue != input.value) {
       makeActiveButton(personalDataSubmitButton);
-    };
+    }
+    else makeDisabledButton(personalDataSubmitButton);
   };
-})
+});
 
 Array.from(accountFormInputs).forEach((input) => {
-   input.oninput = function testFunction() {
-    if (input.value != input.oninput) {
+   const savedInputValue = input.value;
+  input.oninput = function testFunction() {
+    if (savedInputValue != input.value) {
       makeActiveButton(accountSubmitButton);
-    };
+    }
+    else makeDisabledButton(accountSubmitButton);
   };
-})
+});
 
 /*-------------- делаем маску для ввода номера мобильного телефона --------------*/
 
