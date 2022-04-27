@@ -80,11 +80,11 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
     break;
   }
   switch(elementLevel) {
-    case 'Новичок': element.querySelector('.cards__user-level').classList.add('cards__user-level_beginner');
+    case 'Новичок': element.classList.add('cards__user-level_beginner');
     break;
-    case 'Бывалый': element.querySelector('.cards__user-level').classList.add('cards__user-level_middle');
+    case 'Бывалый': element.classList.add('cards__user-level_middle');
     break;
-    case 'Профессионал': element.querySelector('.cards__user-level').classList.add('cards__user-level_advansed');
+    case 'Профессионал': element.classList.add('cards__user-level_advansed');
     break;
   }
   cardContainer.append(element);
@@ -125,7 +125,10 @@ return tagElement
 
 /* Очистить чекбоксы */
 function uncheck() {
- let uncheck = document.getElementsByTagName('input');
+ tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
+   tag.remove();
+ })
+ const uncheck = document.getElementsByTagName('input');
  for(let i = 0; i < uncheck.length; i++)
  {
   if(uncheck[i].type == 'checkbox')
@@ -141,11 +144,26 @@ const filterCard = document.querySelectorAll('.cards__item');
 
 filterCheckboxButtons.forEach((target) => {
   target.addEventListener('change', (evt) => {
-    console.log(target.dataset.filter)
     if(target.checked) {
+      const categoryFilter = target.dataset.filter;
+      filter(categoryFilter, filterCard);
       tagContainer.append(addTag(target.dataset.filter))
     } else {
+      filterCard.forEach((item) => {
+        item.classList.remove('cards__item_hidden')
+      })
       tagContainer.querySelector('#tag-content').remove(addTag(target.dataset.filter))
     }
   })
 })
+
+
+
+function filter (category, item) {
+  item.forEach(el => {
+    const filterItem = !el.classList.contains(category);
+    if (filterItem) {
+      el.classList.add('cards__item_hidden')
+    } 
+  })
+}
