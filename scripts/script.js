@@ -142,17 +142,32 @@ function uncheck() {
 const filterCheckboxButtons = document.querySelectorAll('.filters__box_level');
 const filterCard = document.querySelectorAll('.cards__item');
 
+
+  
+ 
+    filterCard.forEach((items) => {
+      items.classList.add('cards__item_hidden');
+    });
+  
+
+ 
+ 
+  
+
+
 filterCheckboxButtons.forEach((target) => {
   target.addEventListener('change', (evt) => {
+    const categoryFilter = target.dataset.filter;
     if(target.checked) {
-      const categoryFilter = target.dataset.filter;
       filter(categoryFilter, filterCard);
-      tagContainer.append(addTag(target.dataset.filter))
+      tagContainer.append(addTag(target.dataset.name))
     } else {
       filterCard.forEach((item) => {
-        item.classList.remove('cards__item_hidden')
+      if (item.classList.contains(categoryFilter)){
+        item.classList.add('cards__item_hidden')
+      }
       })
-      tagContainer.querySelector('#tag-content').remove(addTag(target.dataset.filter))
+      tagContainer.querySelector('#tag-content').remove();
     }
   })
 })
@@ -161,9 +176,10 @@ filterCheckboxButtons.forEach((target) => {
 
 function filter (category, item) {
   item.forEach(el => {
-    const filterItem = !el.classList.contains(category);
+    const filterItem = el.classList.contains(category);
     if (filterItem) {
-      el.classList.add('cards__item_hidden')
+      el.classList.remove('cards__item_hidden');
     } 
   })
 }
+
