@@ -28,6 +28,7 @@
 @import url(../blocks/filters/__header/filters__header.css);
 @import url(../blocks/filters/__title/filters__title.css);
 @import url(../blocks/filters/__delete-button/filters__delete-button.css);
+@import url(../blocks/filters/__delete-button/filters__delete-button_visible.css);
 @import url(../blocks/filters/__block/filters__block.css);
 @import url(../blocks/filters/__categories/filters__categories.css);
 @import url(../blocks/filters/__name-block/filters__name-block.css);

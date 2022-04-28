@@ -57,6 +57,9 @@ const info = [
   }
 ];
 
+/*--------------------------------------------------------------------------------------------------*/
+/*--------------------------- добавление дефолтных карточек на страницу ----------------------------*/
+
 const infoCardTemplate = document.querySelector('#tamplate-card').content;
 const cardContainer = document.querySelector('.cards__container');
 
@@ -90,9 +93,6 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
   cardContainer.append(element);
 };//Данная функция добавляет карточки с кнопкой ,,продолжить,,
 
-/*--------------------------------------------------------------------------------------------------*/
-/*--------------------------- добавление дефолтных карточек на страницу ----------------------------*/
-
 /**
  * 
  * @param {*} elementLink 
@@ -102,12 +102,14 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
  * @param {*} elementButton 
  */
 
-/* Добавление тегов под блоком фильтр */
+/*--------------------------- Добавление тегов под блоком фильтр ---------------------------*/
+
 const userLeverCheckboxPro = document.querySelector('#tag-pro');
 const userLeverCheckboxMedium = document.querySelector('#tag-medium');
 const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
 const tagContainer = document.querySelector('.filter__tags-container');
 const tagTemplate = document.querySelector('#tag-template').content;
+const uncheckButton  = document.querySelector('.filters__delete-button');
 
 function addTag(item) {
   const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
@@ -115,69 +117,72 @@ function addTag(item) {
   const tagTitle = tagElement.querySelector('#tag-title');
 
   tagTitle.textContent = item;
-
+  
   tagDeleteBtn.addEventListener('click', function() {
-    tagElement.remove()
+    tagElement.remove();
   });
 
-return tagElement
-}
+  return tagElement
+};
 
-/* Очистить чекбоксы */
+/*----------------- удаление контейнера с тегами по клику на 'очистить' ------------------ */
+
 function uncheck() {
- tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
-   tag.remove();
- })
- const uncheck = document.getElementsByTagName('input');
- for(let i = 0; i < uncheck.length; i++)
- {
-  if(uncheck[i].type == 'checkbox')
-  {
-   uncheck[i].checked = false;
-  }
- }
-}
+  tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
+    tag.remove();
+  });
+  uncheckCheckboxes();
+  uncheckButton.classList.remove('filters__delete-button_visible');
+};
+
+/* ---------------------------------- очистка чек-боксов ---------------------------------- */
+
+function uncheckCheckboxes() {
+  const input = document.getElementsByTagName('input');
+  Array.from(input).forEach((el) => {
+    if(el.type === 'checkbox')
+     el.checked = false;
+  });
+};
 
 // Добавляем тег
+//выбираем все элементы с градацией навыка
 const filterCheckboxButtons = document.querySelectorAll('.filters__box_level');
+//и все карточки
 const filterCard = document.querySelectorAll('.cards__item');
 
-
+// выводим карточки на экран
+filterCard.forEach((items) => {
+  items.classList.remove('cards__item_hidden');
+});
   
- 
-    filterCard.forEach((items) => {
-      items.classList.add('cards__item_hidden');
-    });
-  
-
- 
- 
-  
-
-
 filterCheckboxButtons.forEach((target) => {
-  target.addEventListener('change', (evt) => {
+
+  target.addEventListener('change', () => {
+
     const categoryFilter = target.dataset.filter;
     if(target.checked) {
+      filterCard.forEach((items) => {
+      items.classList.add('cards__item_hidden');
+    });
       filter(categoryFilter, filterCard);
       tagContainer.append(addTag(target.dataset.name))
-    } else {
-      filterCard.forEach((item) => {
-      if (item.classList.contains(categoryFilter)){
-        item.classList.add('cards__item_hidden')
-      }
-      })
+      uncheckButton.classList.add('filters__delete-button_visible');
+    } 
+    else  {
+      filterCard.forEach((items) => {
+  items.classList.remove('cards__item_hidden');
+});
+          item.classList.add('cards__item_hidden')
+        }
       tagContainer.querySelector('#tag-content').remove();
-    }
   })
 })
-
-
 
 function filter (category, item) {
   item.forEach(el => {
     const filterItem = el.classList.contains(category);
-    if (filterItem) {
+    if (filterItem  === true) {
       el.classList.remove('cards__item_hidden');
     } 
   })
