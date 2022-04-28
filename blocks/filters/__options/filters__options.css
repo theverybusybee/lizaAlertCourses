@@ -4,11 +4,8 @@
   margin-top: 32px;
   list-style: none;
   max-height: 0;
-  opacity: 0;
   overflow: hidden;
-  will-change: max-height;
-  transition: all 0.3s ease-out;
-  box-sizing: content-box;
+  transition: max-height 0.9s;
 }
 
 .open .filters__options {
