@@ -17,63 +17,95 @@ const personalDataSubmitButton = document.querySelector('#PersonalDataSubmitButt
 const accountSubmitButton = document.querySelector('#AccountSubmitButton');
 
 // формы
-const personalDataForm = document.querySelector(".profile-form_content_personal-data");
-const accountForm = document.querySelector(".profile-form_content_account");
+const personalDataForm = document.forms.personalDataForm;
+const accountForm = document.forms.accountForm;
 
-// функция, которая сохраняет введенное имя в профиль
-function editUsername (inputValue, profileValue) {
-  profileValue.textContent = inputValue.value;
-}
+// все инпуты форм
+const personalDataFormInputs = personalDataForm.querySelectorAll('.profile-form__item');
+const accountFormInputs = accountForm.querySelectorAll('.profile-form__item');
 
-// функция, которая сохраняет введенные значения в инпутах
-function saveProfileData(input) {
-  input.value = input.value;
-}
+/*------------------------------ cохраняем данные формы ------------------------------*/
+
+function saveFormData(form) {
+  form.elements.onclick = function(event) {
+    if (form.elements.tagName == "input") {
+      event.target.value =  event.target.value;
+    };
+  };
+};
+
+/*------------------ делаем кнопку неактивной при сохранении данных ------------------*/
+
+function makeDisabledButton(submit) {
+  submit.style.color = '#9397a3';
+  submit.style.background = '#e6e7eb';
+  submit.disabled = true;
+  submit.style.cursor = 'not-allowed';
+};
+
+/*------------------- делаем кнопку активной при сохранении данных -------------------*/
+
+function makeActiveButton(submit) {
+  submit.style.background = '#f60';
+  submit.style.color = '#fff';
+  submit.disabled = false;
+  submit.style.cursor = 'pointer';
+};
+
+/*------------------ присваиваем для имени профиля значение инпута ------------------*/
+
+inputUsername.value = profileName.textContent;
+
+/*------------------------ сохраняем введенное имя в профиль ------------------------*/
+
+function editUsername() {
+  profileName.textContent = inputUsername.value;
+};
+
+/*-------------- сохраняем данные формы в профиль, меняем цвет кнопки --------------*/
 
 personalDataForm.addEventListener('submit', (evt) =>
 {
   evt.preventDefault();
-  editUsername(inputUsername, profileName);
-  saveProfileData(inputUserLocation);
-  saveProfileData(inputUserNickname);
-  saveProfileData(inputUserDateOfBirth);
-  personalDataSubmitButton.style.color = '#9397a3';
-  personalDataSubmitButton.style.background = '#e6e7eb';
+  editUsername();
+  saveFormData(personalDataForm);
+  makeDisabledButton(personalDataSubmitButton)
 });
 
-accountSubmitButton.addEventListener('submit', (evt) =>
+accountForm.addEventListener('submit', (evt) =>
 {
   evt.preventDefault();
-  saveProfileData(inputUserNumber);
-  saveProfileData(inputUserEmail);
-  saveProfileData(inputUserPassword);
+  saveFormData(accountForm);
+  makeDisabledButton(accountSubmitButton)
 });
 
+/*----------------------- изменяем кнопки при вводе текста -----------------------*/
 
-inputUsername.value = profileName.textContent;
+Array.from(personalDataFormInputs).forEach((input) => {
+  const savedInputValue = input.value;
+  input.oninput = function testFunction() {
+    if (savedInputValue != input.value) {
+      makeActiveButton(personalDataSubmitButton);
+    }
+    else makeDisabledButton(personalDataSubmitButton);
+  };
+});
 
-function changeSubmitButton(input, submit) {
-input.oninput = function testFunction() {
-  if (input.value != input.oninput) {
-    submit.style.background = '#FF6600';
-    submit.style.color = '#fff';
-    submit.disabled = false;
-  }
-}
-}
+Array.from(accountFormInputs).forEach((input) => {
+   const savedInputValue = input.value;
+  input.oninput = function testFunction() {
+    if (savedInputValue != input.value) {
+      makeActiveButton(accountSubmitButton);
+    }
+    else makeDisabledButton(accountSubmitButton);
+  };
+});
 
-changeSubmitButton(inputUsername, personalDataSubmitButton);
-changeSubmitButton(inputUserLocation, personalDataSubmitButton);
-changeSubmitButton(inputUserNickname, personalDataSubmitButton);
-changeSubmitButton(inputUserDateOfBirth, personalDataSubmitButton);
-changeSubmitButton(inputUserNumber, accountSubmitButton);
-changeSubmitButton(inputUserEmail, accountSubmitButton);
-changeSubmitButton(inputUserPassword, accountSubmitButton);
+/*-------------- делаем маску для ввода номера мобильного телефона --------------*/
 
-// делаем маску для ввода номера мобильного телефона
 inputUserNumber.onclick = function() {
     inputUserNumber.value = "+7";
-}
+};
 
 inputUserNumber.onkeydown = function() {
   let counter = 0;
@@ -82,6 +114,7 @@ inputUserNumber.onkeydown = function() {
     counter--;
     return;
   }
+
   if (currentLength == 2) 
     inputUserNumber.value = inputUserNumber.value + " "; 
   if (currentLength == 6)
@@ -93,5 +126,4 @@ inputUserNumber.onkeydown = function() {
   if (currentLength > 15)
     inputUserNumber.value = inputUserNumber.value.substring(0, inputUserNumber.value.length - 1);
   counter++;
-}
-
+};

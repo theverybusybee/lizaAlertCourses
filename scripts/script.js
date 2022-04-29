@@ -79,20 +79,20 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
   element.querySelector('.cards__description').textContent = elementText;
   element.querySelector('.cards__user-level').textContent = elementLevel;
   element.querySelector('.cards__button').textContent = elementStatus;
-  
-  switch(elementStatus) {
+
+  switch (elementStatus) {
     case 'Пройден': element.querySelector('.cards__button').classList.add('cards__button_disabled');
-    break;
+      break;
     case 'Продолжить': element.querySelector('.cards__button').classList.add('cards__button_active');
-    break;
+      break;
   }
   switch(elementLevel) {
     case 'Новичок': element.classList.add('cards__user-level_beginner');
-    break;
+      break;
     case 'Бывалый': element.classList.add('cards__user-level_middle');
-    break;
+      break;
     case 'Профессионал': element.classList.add('cards__user-level_advansed');
-    break;
+      break;
   }
   cardContainer.append(element);
 };//Данная функция добавляет карточки с кнопкой ,,продолжить,,
@@ -111,7 +111,7 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
 const userLeverCheckboxPro = document.querySelector('#tag-pro');
 const userLeverCheckboxMedium = document.querySelector('#tag-medium');
 const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
-const tagContainer = document.querySelector('.filter__tags-container');
+const tagContainer = document.querySelector('.filters__tags-container');
 const tagTemplate = document.querySelector('#tag-template').content;
 const uncheckButton  = document.querySelector('.filters__delete-button');
 
@@ -130,6 +130,7 @@ function addTag(item) {
 };
 
 /*----------------- удаление контейнера с тегами по клику на 'очистить' ------------------ */
+
 
 function uncheck() {
   tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
@@ -156,6 +157,7 @@ function uncheckCheckboxes() {
      el.checked = false;
   });
 };
+
 
 // Добавляем тег
 const checkboxButtonsLevel = document.querySelectorAll('.filters__box_level');
@@ -210,29 +212,28 @@ function filter (checkbox, array, inp) {
 };
 
 /*--------------------------------------- аккордеон ---------------------------------------*/
-
+  
 document.addEventListener('DOMContentLoaded', () => {
-    const accordions = document.querySelectorAll('.filters__block');
+  const accordions = document.querySelectorAll('.filters__block');
 
-    accordions.forEach(el => {
-        el.addEventListener('click', (e) => {
-            const self = e.currentTarget;
-            const control = self.querySelector('.filters__open-button');
-            const content = self.querySelector('.filters__options');
+  accordions.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const self = e.currentTarget;
+      const control = self.querySelector('.filters__open-button');
+      const content = self.querySelector('.filters__options');
 
-            self.classList.toggle('open');
+      self.classList.toggle('open');
 
-            // если открыт аккордеон
-            if (self.classList.contains('open')) {
-                control.setAttribute('aria-expanded', true);
-                content.setAttribute('aria-hidden', false);
-                content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-                control.setAttribute('aria-expanded', false);
-                content.setAttribute('aria-hidden', true);
-                content.style.maxHeight = null;
-            }
-        });
+      // если открыт аккордеон
+      if (self.classList.contains('open')) {
+        control.setAttribute('aria-expanded', true);
+        content.setAttribute('aria-hidden', false);
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        control.setAttribute('aria-expanded', false);
+        content.setAttribute('aria-hidden', true);
+        content.style.maxHeight = null;
+      }
     });
+  });
 });
-

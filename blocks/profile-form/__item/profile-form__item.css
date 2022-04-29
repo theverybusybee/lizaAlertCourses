@@ -8,6 +8,7 @@
   font-size: 18px;
   line-height: 1.33;
   color: #212329;
+  max-height: 48px;
 }
 
 .profile-form__item::-webkit-input-placeholder {
@@ -21,7 +22,12 @@
 }
 
 .profile-form__item:hover {
-  border-color: #FF6600;
+  border-color: #f60;
+}
+
+.profile-form__item:focus {
+  outline: none;
+  border-color: #f60;
 }
 
 .profile-form__item::-webkit-calendar-picker-indicator {

@@ -1,6 +1,6 @@
 .filters__checkbox-image {
-  position: absolute;
-  margin-top: 2px;
+  margin: -3px;
+  display: inline-flex;
   width: 20px;
   height: 20px;
   background-image: url(../../../images/logos/Vector.png);
@@ -9,6 +9,5 @@
 }
 
 .filters__box:checked + .filters__checkbox-name {
-  background-image: url(../../../images/logos/Vector_active.png)
+  background-image: url(../../../images/logos/Vector_active.png);
 }
-
