@@ -72,20 +72,20 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
   element.querySelector('.cards__description').textContent = elementText;
   element.querySelector('.cards__user-level').textContent = elementLevel;
   element.querySelector('.cards__button').textContent = elementStatus;
-  
-  switch(elementStatus) {
+
+  switch (elementStatus) {
     case 'Пройден': element.querySelector('.cards__button').classList.add('cards__button_disabled');
-    break;
+      break;
     case 'Продолжить': element.querySelector('.cards__button').classList.add('cards__button_active');
-    break;
+      break;
   }
-  switch(elementLevel) {
+  switch (elementLevel) {
     case 'Новичок': element.querySelector('.cards__user-level').classList.add('cards__user-level_beginner');
-    break;
+      break;
     case 'Бывалый': element.querySelector('.cards__user-level').classList.add('cards__user-level_middle');
-    break;
+      break;
     case 'Профессионал': element.querySelector('.cards__user-level').classList.add('cards__user-level_advansed');
-    break;
+      break;
   }
   cardContainer.append(element);
 };//Данная функция добавляет карточки с кнопкой ,,продолжить,,
@@ -116,26 +116,21 @@ function addTag(item) {
 
   tagTitle.textContent = item;
 
-  tagDeleteBtn.addEventListener('click', function() {
+  tagDeleteBtn.addEventListener('click', function () {
     tagElement.remove()
   });
 
-return tagElement
+  return tagElement
 }
 
 /* Очистить чекбоксы */
 function uncheck() {
-  tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
-    tag.remove();
-  })
- let uncheck = document.getElementsByTagName('input');
- for(let i = 0; i < uncheck.length; i++)
- {
-  if(uncheck[i].type == 'checkbox')
-  {
-   uncheck[i].checked = false;
+  let uncheck = document.getElementsByTagName('input');
+  for (let i = 0; i < uncheck.length; i++) {
+    if (uncheck[i].type == 'checkbox') {
+      uncheck[i].checked = false;
+    }
   }
- }
 }
 
 
@@ -146,10 +141,34 @@ const filterCard = document.querySelectorAll('.cards__item');
 filterCheckboxButtons.forEach((target) => {
   target.addEventListener('change', (evt) => {
     console.log(target.dataset.filter)
-    if(target.checked) {
+    if (target.checked) {
       tagContainer.append(addTag(target.dataset.filter))
     } else {
       tagContainer.querySelector('#tag-content').remove(addTag(target.dataset.filter))
     }
   })
 })
+document.addEventListener('DOMContentLoaded', () => {
+  const accordions = document.querySelectorAll('.filters__block');
+
+  accordions.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const self = e.currentTarget;
+      const control = self.querySelector('.filters__open-button');
+      const content = self.querySelector('.filters__options');
+
+      self.classList.toggle('open');
+
+      // если открыт аккордеон
+      if (self.classList.contains('open')) {
+        control.setAttribute('aria-expanded', true);
+        content.setAttribute('aria-hidden', false);
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        control.setAttribute('aria-expanded', false);
+        content.setAttribute('aria-hidden', true);
+        content.style.maxHeight = null;
+      }
+    });
+  });
+});

@@ -8,4 +8,3 @@
 .filters__box:checked + .filters__checkbox-image {
   background-image: url(../../../images/logos/Vector_active.png);
 }
-

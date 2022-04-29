@@ -1,12 +1,9 @@
 .filters__checkbox-name {
-  margin: 0 0 0 30px;
+  margin: 0 0 0 10px;
+  padding: 0;
   font-size: 18px;
   line-height: 1.33;
   color: #212329;
-  opacity: 1; /* */
-  transform: translate(0, 0);
-  z-index: 2;
-  overflow: hidden;
 }
 .filters__box:checked ~ .filters__checkbox-name {
   color: #f06000;
