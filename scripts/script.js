@@ -64,6 +64,8 @@ const infoCardTemplate = document.querySelector('#tamplate-card').content;
 const cardContainer = document.querySelector('.cards__container');
 
 let levels = [];
+let statuses = [];
+
 
 info.forEach(element => {
   cardAdd(element.imageLink, element.title, element.text, element.level, element.status)
@@ -156,10 +158,11 @@ function uncheckCheckboxes() {
 };
 
 // Добавляем тег
-const filterCheckboxButtons = document.querySelectorAll('.filters__box_level');
+const checkboxButtonsLevel = document.querySelectorAll('.filters__box_level');
+const checkboxButtonsStatus = document.querySelectorAll('.filters__box_status')
 const filterCard = document.querySelectorAll('.cards__item');
 
-filterCheckboxButtons.forEach((target) => {
+checkboxButtonsLevel.forEach((target) => {
   target.addEventListener('change', (evt) => {
     if(target.checked) {
       levels = Array.from(levels);
@@ -175,19 +178,32 @@ filterCheckboxButtons.forEach((target) => {
   });
 });
 
+checkboxButtonsStatus.forEach((target) => {
+  target.addEventListener('change', (evt) => {
+    if(target.checked) {
+      levels = Array.from(levels);
+      filter(target, levels, info);
+      levels = new Set(levels);
+    } else {
+      levels = new Set(levels);
+      filter(target, levels, info);
+    };
+  });
+});
+
 function filter (checkbox, array, inp) {
   cardContainer.innerHTML = '';
   if (checkbox.checked) {
     array.push(checkbox.dataset.name);
-    inp.filter(item => array.length === 0 || array.includes(item.level)).forEach((element) => {
+    inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level)) && array.includes(item.status)).forEach((element) => {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
-    });
+    }); 
     
   };
   if(!checkbox.checked) {
     array.delete(checkbox.dataset.name);
     array = Array.from(array);
-    inp.filter(item => array.length === 0 || array.includes(item.level)).forEach((element) => {
+    inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level)) && array.includes(item.status)).forEach((element) => {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
     }); 
   }; 
