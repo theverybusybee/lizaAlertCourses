@@ -106,7 +106,7 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
 const userLeverCheckboxPro = document.querySelector('#tag-pro');
 const userLeverCheckboxMedium = document.querySelector('#tag-medium');
 const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
-const tagContainer = document.querySelector('.filter__tags-container');
+const tagContainer = document.querySelector('.filters__tags-container');
 const tagTemplate = document.querySelector('#tag-template').content;
 
 function addTag(item) {
@@ -132,6 +132,7 @@ function uncheck() {
     }
   }
 }
+
 
 // Добавляем тег
 const filterCheckboxButtons = document.querySelectorAll('.filters__box_level');
