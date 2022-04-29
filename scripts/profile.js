@@ -94,3 +94,4 @@ inputUserNumber.onkeydown = function() {
     inputUserNumber.value = inputUserNumber.value.substring(0, inputUserNumber.value.length - 1);
   counter++;
 }
+
