@@ -183,7 +183,8 @@
                         id="tag-newbie"
                         class="filters__box filters__box_level"
                         type="checkbox"
-                        data-filter="Новичок"
+                        data-filter="cards__user-level_beginner"
+                        data-name="Новичок"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Новичок</span>
@@ -196,7 +197,8 @@
                         id="tag-medium"
                         class="filters__box filters__box_level"
                         type="checkbox"
-                        data-filter="Бывалый"
+                        data-filter="cards__user-level_middle"
+                        data-name="Бывалый"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Бывалый</span>
@@ -209,7 +211,8 @@
                         id="tag-pro"
                         class="filters__box filters__box_level"
                         type="checkbox"
-                        data-filter="Профессионал"
+                        data-filter="cards__user-level_advansed"
+                        data-name="Профессионал"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span id="tag-pro-name" class="filters__checkbox-name"
@@ -232,7 +235,7 @@
                 <ul class="filters__options" aria-hidden="true">
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input class="filters__box filters__box_status" type="checkbox" data-name="Пройден"/>
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Не активный</span>
                     </label>
@@ -240,7 +243,7 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input class="filters__box filters__box_status" type="checkbox" data-name="Продолжить"/>
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Вы записаны</span>
                     </label>
@@ -248,7 +251,7 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input class="filters__box filters__box_status" type="checkbox" data-name="Записаться"/>
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Активный</span>
                     </label>
@@ -256,7 +259,7 @@
 
                   <li class="filters__element">
                     <label class="filters__label">
-                      <input class="filters__box" type="checkbox" />
+                      <input class="filters__box filters__box_status" type="checkbox" data-name="Пройден"/>
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Пройден</span>
                     </label>
