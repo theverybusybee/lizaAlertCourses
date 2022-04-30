@@ -34,24 +34,6 @@ function saveFormData(form) {
   };
 };
 
-/*------------------ делаем кнопку неактивной при сохранении данных ------------------*/
-
-function makeDisabledButton(submit) {
-  submit.style.color = '#9397a3';
-  submit.style.background = '#e6e7eb';
-  submit.disabled = true;
-  submit.style.cursor = 'not-allowed';
-};
-
-/*------------------- делаем кнопку активной при сохранении данных -------------------*/
-
-function makeActiveButton(submit) {
-  submit.style.background = '#f60';
-  submit.style.color = '#fff';
-  submit.disabled = false;
-  submit.style.cursor = 'pointer';
-};
-
 /*------------------ присваиваем для имени профиля значение инпута ------------------*/
 
 inputUsername.value = profileName.textContent;
@@ -79,6 +61,20 @@ accountForm.addEventListener('submit', (evt) =>
   makeDisabledButton(accountSubmitButton)
 });
 
+/*------------------ делаем кнопку неактивной при сохранении данных ------------------*/
+
+function makeDisabledButton(submit) {
+  submit.classList.remove('profile-form__submit-button_active');
+  submit.disabled = true;
+};
+
+/*------------------- делаем кнопку активной при сохранении данных -------------------*/
+
+function makeActiveButton(submit) {
+  submit.classList.add('profile-form__submit-button_active');
+  submit.disabled = false;
+};
+
 /*----------------------- изменяем кнопки при вводе текста -----------------------*/
 
 Array.from(personalDataFormInputs).forEach((input) => {
@@ -87,7 +83,9 @@ Array.from(personalDataFormInputs).forEach((input) => {
     if (savedInputValue != input.value) {
       makeActiveButton(personalDataSubmitButton);
     }
-    else makeDisabledButton(personalDataSubmitButton);
+    else {
+      makeDisabledButton(personalDataSubmitButton);
+    }
   };
 });
 
@@ -97,7 +95,9 @@ Array.from(accountFormInputs).forEach((input) => {
     if (savedInputValue != input.value) {
       makeActiveButton(accountSubmitButton);
     }
-    else makeDisabledButton(accountSubmitButton);
+    else {
+      makeDisabledButton(accountSubmitButton);
+    };
   };
 });
 

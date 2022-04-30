@@ -66,10 +66,9 @@ const cardContainer = document.querySelector('.cards__container');
 let levels = [];
 let statuses = [];
 
-
 info.forEach(element => {
   cardAdd(element.imageLink, element.title, element.text, element.level, element.status)
-});//Добавляет на страницу карточки с кнопкой ,,продолжить,, используя метод forEach
+});
 
 function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementStatus) {
   const element = infoCardTemplate.querySelector('.cards__item').cloneNode(true);
@@ -95,7 +94,7 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
       break;
   }
   cardContainer.append(element);
-};//Данная функция добавляет карточки с кнопкой ,,продолжить,,
+};
 
 /**
  * 
@@ -136,15 +135,6 @@ function uncheck() {
   tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
     tag.remove();
   });
-  uncheckCheckboxes();
-  uncheckButton.classList.remove('filters__delete-button_visible');
-};
-
-function uncheck() {
-  tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
-    tag.remove();
-  });
-  uncheckCheckboxes();
   uncheckButton.classList.remove('filters__delete-button_visible');
 };
 
@@ -157,6 +147,19 @@ function uncheckCheckboxes() {
      el.checked = false;
   });
 };
+
+/* ---------------------------------- очистка массива ---------------------------------- */
+
+uncheckButton.addEventListener('click', () => {
+    uncheckCheckboxes();
+    uncheck();
+    levels.clear();
+    statuses.clear();
+    cardContainer.innerHTML = '';
+    info.forEach(element => {
+      cardAdd(element.imageLink, element.title, element.text, element.level, element.status)
+    });
+  });
 
 
 // Добавляем тег
@@ -172,23 +175,28 @@ checkboxButtonsLevel.forEach((target) => {
       levels = new Set(levels);
       tagContainer.append(addTag(target.dataset.name));
       uncheckButton.classList.add('filters__delete-button_visible'); 
+      console.log(levels)
     } else {
       levels = new Set(levels);
       filter(target, levels, info);
       tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
-    };
+      console.log(levels)
+    }; 
   });
 });
 
 checkboxButtonsStatus.forEach((target) => {
   target.addEventListener('change', (evt) => {
     if(target.checked) {
-      levels = Array.from(levels);
-      filter(target, levels, info);
-      levels = new Set(levels);
+      statuses = Array.from(statuses);
+      filter(target, statuses, info);
+      statuses = new Set(statuses);
+      tagContainer.append(addTag(target.dataset.name));
+      uncheckButton.classList.add('filters__delete-button_visible'); 
     } else {
-      levels = new Set(levels);
-      filter(target, levels, info);
+      statuses = new Set(statuses);
+      filter(target, statuses, info);
+      tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
     };
   });
 });
