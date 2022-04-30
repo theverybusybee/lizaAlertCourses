@@ -79,7 +79,7 @@ function makeActiveButton(submit) {
 
 Array.from(personalDataFormInputs).forEach((input) => {
   const savedInputValue = input.value;
-  input.oninput = function testFunction() {
+  input.oninput = function compareValue() {
     if (savedInputValue != input.value) {
       makeActiveButton(personalDataSubmitButton);
     }
@@ -91,7 +91,7 @@ Array.from(personalDataFormInputs).forEach((input) => {
 
 Array.from(accountFormInputs).forEach((input) => {
    const savedInputValue = input.value;
-  input.oninput = function testFunction() {
+  input.oninput = function compareValue() {
     if (savedInputValue != input.value) {
       makeActiveButton(accountSubmitButton);
     }
