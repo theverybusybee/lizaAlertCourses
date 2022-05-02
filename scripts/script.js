@@ -219,7 +219,7 @@ function filter (checkbox, array, inp) {
   cardContainer.innerHTML = '';
   if (checkbox.checked) {
     array.push(checkbox.dataset.name);
-    inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level)) && array.includes(item.status)).forEach((element) => {
+    inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level) && array.includes(item.status))).forEach((element) => {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
     }); 
     
