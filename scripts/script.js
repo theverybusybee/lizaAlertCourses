@@ -166,6 +166,8 @@ uncheckButton.addEventListener('click', () => {
 const checkboxButtonsLevel = document.querySelectorAll('.filters__box_level');
 const checkboxButtonsStatus = document.querySelectorAll('.filters__box_status')
 const filterCard = document.querySelectorAll('.cards__item');
+const checkboxActive = document.querySelector('#checkbox-active');
+const checkboxNotActive = document.querySelector('#checkbox-not-active');
 
 checkboxButtonsLevel.forEach((target) => {
   target.addEventListener('change', (evt) => {
@@ -175,12 +177,12 @@ checkboxButtonsLevel.forEach((target) => {
       levels = new Set(levels);
       tagContainer.append(addTag(target.dataset.name));
       uncheckButton.classList.add('filters__delete-button_visible'); 
-      console.log(levels)
+      
     } else {
       levels = new Set(levels);
       filter(target, levels, info);
-      tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
-      console.log(levels)
+      tagContainer.querySelector('#tag-content').remove();
+      
     }; 
   });
 });
@@ -188,12 +190,24 @@ checkboxButtonsLevel.forEach((target) => {
 checkboxButtonsStatus.forEach((target) => {
   target.addEventListener('change', (evt) => {
     if(target.checked) {
+      if (target.dataset.name === 'Не активный') {
+        checkboxActive.disabled = true;
+      } 
+      if (target.dataset.name === 'Записаться') {
+        checkboxNotActive.disabled = true;
+      }
       statuses = Array.from(statuses);
       filter(target, statuses, info);
       statuses = new Set(statuses);
-      tagContainer.append(addTag(target.dataset.name));
+      tagContainer.append(addTag(target.dataset.title));
       uncheckButton.classList.add('filters__delete-button_visible'); 
     } else {
+      if (target.dataset.name === 'Не активный') {
+        checkboxActive.disabled = false;
+      }
+      if (target.dataset.name === 'Записаться') {
+        checkboxNotActive.disabled = false;
+      }
       statuses = new Set(statuses);
       filter(target, statuses, info);
       tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
@@ -213,7 +227,7 @@ function filter (checkbox, array, inp) {
   if(!checkbox.checked) {
     array.delete(checkbox.dataset.name);
     array = Array.from(array);
-    inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level)) && array.includes(item.status)).forEach((element) => {
+    inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level) && array.includes(item.status))).forEach((element) => {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
     }); 
   }; 
