@@ -37,9 +37,13 @@
 @import url(../blocks/filters/__element/filters__element.css);
 @import url(../blocks/filters/__box/filters__box.css);
 @import url(../blocks/filters/__checkbox-image/filters__checkbox-image.css);
+@import url(../blocks/filters/__checkbox-image/_color/filters__checkbox-image_color_gray.css);
 @import url(../blocks/filters/__checkbox-name/filters__checkbox-name.css);
-@import url(../blocks/filters/__tags-container/filters__tags-container.css);
-@import url(../blocks/filters/__tags-delete/filters__tags-delete.css);
+@import url(../blocks/filters/__checkbox-name/_color/filters__checkbox-name_color_gray.css);
+
+/* filter-tags */
+@import url(../blocks/filter-tags/filter-tags.css);
+@import url(../blocks/filter-tags/__delete-button/filter-tags__delete-button.css);
 
 /* cards */
 @import url(../blocks/cards/cards.css);

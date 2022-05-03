@@ -105,29 +105,28 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
  * @param {*} elementButton 
  */
 
-/*--------------------------- Добавление тегов под блоком фильтр ---------------------------*/
+/*--------------------- Добавление и удаление тегов под блоком фильтр ----------------------*/
 
-const userLeverCheckboxPro = document.querySelector('#tag-pro');
-const userLeverCheckboxMedium = document.querySelector('#tag-medium');
-const userLeverCheckboxNewbie = document.querySelector('#tag-newbie');
-const tagContainer = document.querySelector('.filters__tags-container');
+const tagContainer = document.querySelector('.filter-tags');
 const tagTemplate = document.querySelector('#tag-template').content;
 const uncheckButton  = document.querySelector('.filters__delete-button');
 
-function addTag(item) {
-  const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
-  const tagDeleteBtn = tagElement.querySelector('#delete_button');
-  const tagTitle = tagElement.querySelector('#tag-title');
+function addTag(array1, array2) {
+  const newArray = [...array1, ...array2];
+  tagContainer.innerHTML = '';
+  newArray.forEach((el) => {
+    const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
+    const tagDeleteBtn = tagElement.querySelector('#delete_button');
+    const tagTitle = tagElement.querySelector('#tag-title');
+    tagTitle.textContent = el.toString();
+    tagContainer.append(tagElement);
 
-  tagTitle.textContent = item;
-  
-  tagDeleteBtn.addEventListener('click', function() {
-    tagElement.remove();
-  });
-
-  return tagElement
+    tagDeleteBtn.addEventListener('click', function() {
+      tagElement.remove();
+    });
+    });
+  return tagContainer;
 };
-
 /*----------------- удаление контейнера с тегами по клику на 'очистить' ------------------ */
 
 
@@ -148,7 +147,7 @@ function uncheckCheckboxes() {
   });
 };
 
-/* ---------------------------------- очистка массива ---------------------------------- */
+/*----------------------------------- очистка массива -----------------------------------*/
 
 uncheckButton.addEventListener('click', () => {
     uncheckCheckboxes();
@@ -161,13 +160,14 @@ uncheckButton.addEventListener('click', () => {
     });
   });
 
+/*----------------------------------- добавляем теги -----------------------------------*/
 
-// Добавляем тег
 const checkboxButtonsLevel = document.querySelectorAll('.filters__box_level');
 const checkboxButtonsStatus = document.querySelectorAll('.filters__box_status')
 const filterCard = document.querySelectorAll('.cards__item');
 const checkboxActive = document.querySelector('#checkbox-active');
 const checkboxNotActive = document.querySelector('#checkbox-not-active');
+const filtersCheckboxName = document.querySelector('.filters__checkbox-name')
 
 checkboxButtonsLevel.forEach((target) => {
   target.addEventListener('change', (evt) => {
@@ -175,42 +175,62 @@ checkboxButtonsLevel.forEach((target) => {
       levels = Array.from(levels);
       filter(target, levels, info);
       levels = new Set(levels);
-      tagContainer.append(addTag(target.dataset.name));
+      addTag(levels, statuses);
       uncheckButton.classList.add('filters__delete-button_visible'); 
-      
+      console.log(levels)
     } else {
       levels = new Set(levels);
       filter(target, levels, info);
-      tagContainer.querySelector('#tag-content').remove();
-      
+       addTag(levels, statuses);
+      console.log(levels)
     }; 
   });
 });
+
+/*----------------------------- создаем неактивный чек-бокс -----------------------------*/
+function makeCheckboxDisabled(checkbox) {
+  checkbox.disabled = true;
+  checkbox.nextElementSibling.classList.add('filters__checkbox-image_color_gray');
+  checkbox.nextElementSibling.nextElementSibling.classList.add('filters__checkbox-name_color_gray');
+  checkbox.nextElementSibling.style.cursor = 'not-allowed';
+  checkbox.nextElementSibling.nextElementSibling.style.cursor = 'not-allowed';
+}
+
+/*----------------------------- возвращаем активный чек-бокс -----------------------------*/
+function makeCheckboxActiveAgain(checkbox) {
+  checkbox.disabled = false;
+  checkbox.nextElementSibling.classList.remove('filters__checkbox-image_color_gray');
+  checkbox.nextElementSibling.nextElementSibling.classList.remove('filters__checkbox-name_color_gray');
+  checkbox.nextElementSibling.style.cursor = 'pointer';
+  checkbox.nextElementSibling.nextElementSibling.style.cursor = 'pointer';
+}
 
 checkboxButtonsStatus.forEach((target) => {
   target.addEventListener('change', (evt) => {
     if(target.checked) {
       if (target.dataset.name === 'Не активный') {
-        checkboxActive.disabled = true;
+        makeCheckboxDisabled(checkboxActive);
       } 
       if (target.dataset.name === 'Записаться') {
-        checkboxNotActive.disabled = true;
+        makeCheckboxDisabled(checkboxNotActive);
       }
+
       statuses = Array.from(statuses);
       filter(target, statuses, info);
       statuses = new Set(statuses);
-      tagContainer.append(addTag(target.dataset.title));
       uncheckButton.classList.add('filters__delete-button_visible'); 
+       addTag(levels, statuses);
     } else {
       if (target.dataset.name === 'Не активный') {
-        checkboxActive.disabled = false;
+        makeCheckboxActiveAgain(checkboxActive);
       }
       if (target.dataset.name === 'Записаться') {
-        checkboxNotActive.disabled = false;
+        makeCheckboxActiveAgain(checkboxNotActive);
       }
       statuses = new Set(statuses);
       filter(target, statuses, info);
       tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
+      addTag(levels, statuses);
     };
   });
 });
