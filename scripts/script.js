@@ -63,12 +63,12 @@ const info = [
 const infoCardTemplate = document.querySelector('#tamplate-card').content;//выбор tamplate элемента для карточки
 const cardContainer = document.querySelector('.cards__container');//выбор контейнера карточки
 
-let levels = [];//массив, который заполняется по мере нажатия на checkbox категории levels
-let statuses = [];//массив, который заполняется по мере нажатия на checkbox категории status
+let levels = []; // массив, который заполняется по мере нажатия на checkbox категории levels
+let statuses = []; // массив, который заполняется по мере нажатия на checkbox категории status
 
 info.forEach(element => {
   cardAdd(element.imageLink, element.title, element.text, element.level, element.status)
-});//добавление дефолный карточек на страницу
+}); // добавление дефолный карточек на страницу
 
 function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementStatus) {
   const element = infoCardTemplate.querySelector('.cards__item').cloneNode(true);
@@ -84,7 +84,7 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
       break;
     case 'Продолжить': element.querySelector('.cards__button').classList.add('cards__button_active');
       break;
-  }// в зависимости от статуса карточки, кнопка меняет свое состояние и значение
+  } // в зависимости от статуса карточки, кнопка меняет свое состояние и значение
   switch(elementLevel) {
     case 'Новичок': element.classList.add('cards__user-level_beginner');
       break;
@@ -92,9 +92,9 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
       break;
     case 'Профессионал': element.classList.add('cards__user-level_advansed');
       break;
-  }//в зависимости от ,,уровня,, карточки, ей добавляется дополнительный класс для навигации
+  } // в зависимости от ,,уровня,, карточки, ей добавляется дополнительный класс для навигации
   cardContainer.append(element);
-};//данная функция добавляет карточки на страницу, считывая значения с массива объектов JSON, берет на вход ссылку на картинку, название карточки, текст карточки, категорию 'уровень' карточки и статус карточки
+}; // данная функция добавляет карточки на страницу, считывая значения с массива объектов JSON, берет на вход ссылку на картинку, название карточки, текст карточки, категорию 'уровень' карточки и статус карточки
 
 
 /*--------------------- Добавление и удаление тегов под блоком фильтр ----------------------*/
@@ -181,41 +181,8 @@ checkboxButtonsLevel.forEach((target) => {
       filter(target, levels, info);
       addTag(levels, statuses);
     }; 
-    console.log(tagContainer)
-    test();
   });
-});//обработчик события для checkbox категории ,,levels,, считывает состояние чекбоксов и в зависимости от этого добавляет тег и фильтрует контент на странице
-
-function test() {
-  const tagElement = tagContainer.querySelector('.cards__user-level-bg');
-  console.log(tagElement)
-  const tagDeleteBtn = tagElement.querySelector('.filter-tags__delete-button');
-  console.log(tagDeleteBtn)
-  const inputs = document.getElementsByTagName('input');
-  console.log(inputs)
-
-  tagDeleteBtn.addEventListener('click', (evt) => {
-
-    Array.from(inputs).forEach((el) => {
-      if((el.type === 'checkbox')&&(el.checked === true)&&(el.dataset.title === evt.target.previousElementSibling.textContent)) {
-        el.checked = false;
-        console.log('*********************')
-        console.log(el.type)
-        console.log(el.checked)
-        console.log(el.dataset.title)
-        console.log(evt.target.previousElementSibling.textContent)
-      }
-      else {
-        console.log('----------------------')
-        console.log(el.type)
-        console.log(el.checked)
-        console.log(el.dataset.title)
-        console.log(evt.target.previousElementSibling.textContent)
-      }
-    });
-    tagElement.remove();
-  });
-}
+}); // обработчик события для checkbox категории ,,levels,, считывает состояние чекбоксов и в зависимости от этого добавляет тег и фильтрует контент на странице
 
 /*----------------------------- создаем неактивный чек-бокс -----------------------------*/
 function makeCheckboxDisabled(checkbox) {
@@ -245,7 +212,6 @@ checkboxButtonsStatus.forEach((target) => {
       statuses = new Set(statuses);
       uncheckButton.classList.add('filters__delete-button_visible'); 
       addTag(levels, statuses);
-      test();
     } 
     else {
       if (target.dataset.name === 'Не активный') {
@@ -258,10 +224,9 @@ checkboxButtonsStatus.forEach((target) => {
       filter(target, statuses, info);
       tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
       addTag(levels, statuses);
-      test();
     };
   });
-});//обработчик события для checkbox категории ,,status,, считывает состояние чекбоксов и в зависимости от этого добавляет тег и фильтрует контент на странице
+}); // обработчик события для checkbox категории ,,status,, считывает состояние чекбоксов и в зависимости от этого добавляет тег и фильтрует контент на странице
 
 function filter (checkbox, array, inp) {
   cardContainer.innerHTML = '';
@@ -278,7 +243,7 @@ function filter (checkbox, array, inp) {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
     }); 
   }; 
-};//данная функция при каждом вызове очищает элементы на странице и добавляет новые карточки в зависимости от состояния чекбоксов
+}; // данная функция при каждом вызове очищает элементы на странице и добавляет новые карточки в зависимости от состояния чекбоксов
 
 /*--------------------------------------- аккордеон ---------------------------------------*/
   
