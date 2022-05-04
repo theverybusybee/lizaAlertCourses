@@ -1,7 +1,7 @@
-.filters__tags-container {
+.filter-tags {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  grid-area: filter;
+  grid-area: tags;
 }
