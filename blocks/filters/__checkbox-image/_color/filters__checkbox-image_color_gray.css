@@ -1,3 +1,5 @@
 .filters__checkbox-image_color_gray {
-  opacity: 0.1;
+  cursor: not-allowed;
+  opacity: 0.5;
+  transition: opacity .5s linear;
 }

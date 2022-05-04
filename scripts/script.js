@@ -124,7 +124,7 @@ function addTag(array1, array2) {
     tagDeleteBtn.addEventListener('click', function() {
       tagElement.remove();
     });
-    });
+  });
   return tagContainer;
 };
 /*----------------- удаление контейнера с тегами по клику на 'очистить' ------------------ */
@@ -176,13 +176,12 @@ checkboxButtonsLevel.forEach((target) => {
       filter(target, levels, info);
       levels = new Set(levels);
       addTag(levels, statuses);
-      uncheckButton.classList.add('filters__delete-button_visible'); 
-      console.log(levels)
-    } else {
+      uncheckButton.classList.add('filters__delete-button_visible');
+    } 
+    else {
       levels = new Set(levels);
       filter(target, levels, info);
-       addTag(levels, statuses);
-      console.log(levels)
+      addTag(levels, statuses);
     }; 
   });
 });
@@ -192,8 +191,6 @@ function makeCheckboxDisabled(checkbox) {
   checkbox.disabled = true;
   checkbox.nextElementSibling.classList.add('filters__checkbox-image_color_gray');
   checkbox.nextElementSibling.nextElementSibling.classList.add('filters__checkbox-name_color_gray');
-  checkbox.nextElementSibling.style.cursor = 'not-allowed';
-  checkbox.nextElementSibling.nextElementSibling.style.cursor = 'not-allowed';
 }
 
 /*----------------------------- возвращаем активный чек-бокс -----------------------------*/
@@ -201,8 +198,6 @@ function makeCheckboxActiveAgain(checkbox) {
   checkbox.disabled = false;
   checkbox.nextElementSibling.classList.remove('filters__checkbox-image_color_gray');
   checkbox.nextElementSibling.nextElementSibling.classList.remove('filters__checkbox-name_color_gray');
-  checkbox.nextElementSibling.style.cursor = 'pointer';
-  checkbox.nextElementSibling.nextElementSibling.style.cursor = 'pointer';
 }
 
 checkboxButtonsStatus.forEach((target) => {
@@ -210,17 +205,17 @@ checkboxButtonsStatus.forEach((target) => {
     if(target.checked) {
       if (target.dataset.name === 'Не активный') {
         makeCheckboxDisabled(checkboxActive);
-      } 
+      }
       if (target.dataset.name === 'Записаться') {
         makeCheckboxDisabled(checkboxNotActive);
       }
-
       statuses = Array.from(statuses);
       filter(target, statuses, info);
       statuses = new Set(statuses);
       uncheckButton.classList.add('filters__delete-button_visible'); 
-       addTag(levels, statuses);
-    } else {
+      addTag(levels, statuses);
+    } 
+    else {
       if (target.dataset.name === 'Не активный') {
         makeCheckboxActiveAgain(checkboxActive);
       }
@@ -241,8 +236,7 @@ function filter (checkbox, array, inp) {
     array.push(checkbox.dataset.name);
     inp.filter(item => (array.length === 0) || (array.includes(item.level) && !array.includes(item.status)) || (!array.includes(item.level) && array.includes(item.status)) || (array.includes(item.level) && array.includes(item.status))).forEach((element) => {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
-    }); 
-    
+    });   
   };
   if(!checkbox.checked) {
     array.delete(checkbox.dataset.name);
