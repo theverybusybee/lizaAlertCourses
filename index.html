@@ -7,7 +7,7 @@
     <meta name="keywords" content="courses, Liza Alert" />
     <meta
       name="author"
-      content="Дмитрий Сережкин, София Купцова, Владислав Логинов, Александр Дерюгин, Вероника Антончик"
+      content="Дмитрий Сережкин, Вероника Антончик, Александр Дерюгин, Владислав Логинов, София Купцова"
     />
     <link
       rel="icon"
@@ -238,7 +238,9 @@
                       <input
                         class="filters__box filters__box_status"
                         type="checkbox"
-                        data-name="Пройден"
+                        id="checkbox-not-active"
+                        data-name="Не активный"
+                        data-title="Не активный"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Не активный</span>
@@ -248,9 +250,10 @@
                   <li class="filters__element">
                     <label class="filters__label">
                       <input
-                        class="filters__box filters__box_status"
+                        class="filters__box filters__box_gray filters__box_status"
                         type="checkbox"
                         data-name="Продолжить"
+                        data-title="Вы записаны"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Вы записаны</span>
@@ -262,7 +265,9 @@
                       <input
                         class="filters__box filters__box_status"
                         type="checkbox"
+                        id="checkbox-active"
                         data-name="Записаться"
+                        data-title="Активный"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Активный</span>
@@ -275,6 +280,7 @@
                         class="filters__box filters__box_status"
                         type="checkbox"
                         data-name="Пройден"
+                        data-title="Пройден"
                       />
                       <span class="filters__checkbox-image"></span>
                       <span class="filters__checkbox-name">Пройден</span>
@@ -285,20 +291,20 @@
             </div>
           </aside>
 
-          <div class="filters__tags-container">
+          <div class="filter-tags">
             <template id="tag-template">
               <div id="tag-content" class="cards__user-level-bg">
                 <p id="tag-title" class="cards__user-level"></p>
                 <button
                   type="button"
                   id="delete_button"
-                  class="filters__tags-delete"
+                  class="filter-tags__delete-button"
                 ></button>
               </div>
             </template>
           </div>
           <section class="cards">
-            <ul class="cards__container">
+            <ul class="cards__container"> 
               <template id="tamplate-card">
                 <li class="cards__item">
                   <img

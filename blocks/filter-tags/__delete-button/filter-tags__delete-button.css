@@ -1,4 +1,4 @@
-.filters__tags-delete {
+.filter-tags__delete-button {
   background: url(../../../images/logos/close-logo_gray.svg) no-repeat;
   width: 20px;
   border: none;
@@ -8,6 +8,6 @@
   cursor: pointer;
 }
 
-.filters__tags-delete:hover {
+.filter-tags__delete-button:hover {
   opacity: 0.7;
 }
