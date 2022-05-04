@@ -111,30 +111,36 @@ const tagContainer = document.querySelector('.filter-tags');
 const tagTemplate = document.querySelector('#tag-template').content;
 const uncheckButton  = document.querySelector('.filters__delete-button');
 
-function addTag(array1, array2) {
-  const newArray = [...array1, ...array2];
+function addTag(arrayFirst, arraySecond) {
+  const newArray = [...arrayFirst, ...arraySecond];
   tagContainer.innerHTML = '';
   newArray.forEach((el) => {
     const tagElement = tagTemplate.querySelector('#tag-content').cloneNode(true);
     const tagDeleteBtn = tagElement.querySelector('#delete_button');
     const tagTitle = tagElement.querySelector('#tag-title');
-    tagTitle.textContent = el.toString();
+    if(el.toString() === 'Продолжить') {
+      tagTitle.textContent = 'Вы записаны';
+    } 
+    else if(el.toString() === 'Записаться') {
+      tagTitle.textContent = 'Активный';
+    }
+    else {
+      tagTitle.textContent = el.toString();
+    }
     tagContainer.append(tagElement);
-
-    tagDeleteBtn.addEventListener('click', function() {
-      tagElement.remove();
     });
-  });
   return tagContainer;
 };
-/*----------------- удаление контейнера с тегами по клику на 'очистить' ------------------ */
 
+/*----------------- удаление контейнера с тегами по клику на 'очистить' ------------------ */
 
 function uncheck() {
   tagContainer.querySelectorAll('#tag-content').forEach((tag) => {
     tag.remove();
   });
   uncheckButton.classList.remove('filters__delete-button_visible');
+  makeCheckboxActiveAgain(checkboxActive);
+  makeCheckboxActiveAgain(checkboxNotActive);
 };
 
 /* ---------------------------------- очистка чек-боксов ---------------------------------- */
@@ -183,8 +189,41 @@ checkboxButtonsLevel.forEach((target) => {
       filter(target, levels, info);
       addTag(levels, statuses);
     }; 
+    console.log(tagContainer)
+    test();
   });
 });
+
+function test() {
+  const tagElement = tagContainer.querySelector('.cards__user-level-bg');
+  console.log(tagElement)
+  const tagDeleteBtn = tagElement.querySelector('.filter-tags__delete-button');
+  console.log(tagDeleteBtn)
+  const inputs = document.getElementsByTagName('input');
+  console.log(inputs)
+
+  tagDeleteBtn.addEventListener('click', (evt) => {
+
+    Array.from(inputs).forEach((el) => {
+      if((el.type === 'checkbox')&&(el.checked === true)&&(el.dataset.title === evt.target.previousElementSibling.textContent)) {
+        el.checked = false;
+        console.log('*********************')
+        console.log(el.type)
+        console.log(el.checked)
+        console.log(el.dataset.title)
+        console.log(evt.target.previousElementSibling.textContent)
+      }
+      else {
+        console.log('----------------------')
+        console.log(el.type)
+        console.log(el.checked)
+        console.log(el.dataset.title)
+        console.log(evt.target.previousElementSibling.textContent)
+      }
+    });
+    tagElement.remove();
+  });
+}
 
 /*----------------------------- создаем неактивный чек-бокс -----------------------------*/
 function makeCheckboxDisabled(checkbox) {
@@ -214,6 +253,7 @@ checkboxButtonsStatus.forEach((target) => {
       statuses = new Set(statuses);
       uncheckButton.classList.add('filters__delete-button_visible'); 
       addTag(levels, statuses);
+      test();
     } 
     else {
       if (target.dataset.name === 'Не активный') {
@@ -226,6 +266,7 @@ checkboxButtonsStatus.forEach((target) => {
       filter(target, statuses, info);
       tagContainer.querySelector('#tag-content').remove(target.dataset.filter);
       addTag(levels, statuses);
+      test();
     };
   });
 });
