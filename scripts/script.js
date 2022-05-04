@@ -60,15 +60,15 @@ const info = [
 /*--------------------------------------------------------------------------------------------------*/
 /*--------------------------- добавление дефолтных карточек на страницу ----------------------------*/
 
-const infoCardTemplate = document.querySelector('#tamplate-card').content;
-const cardContainer = document.querySelector('.cards__container');
+const infoCardTemplate = document.querySelector('#tamplate-card').content;//выбор tamplate элемента для карточки
+const cardContainer = document.querySelector('.cards__container');//выбор контейнера карточки
 
-let levels = [];
-let statuses = [];
+let levels = [];//массив, который заполняется по мере нажатия на checkbox категории levels
+let statuses = [];//массив, который заполняется по мере нажатия на checkbox категории status
 
 info.forEach(element => {
   cardAdd(element.imageLink, element.title, element.text, element.level, element.status)
-});
+});//добавление дефолный карточек на страницу
 
 function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementStatus) {
   const element = infoCardTemplate.querySelector('.cards__item').cloneNode(true);
@@ -84,7 +84,7 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
       break;
     case 'Продолжить': element.querySelector('.cards__button').classList.add('cards__button_active');
       break;
-  }
+  }// в зависимости от статуса карточки, кнопка меняет свое состояние и значение
   switch(elementLevel) {
     case 'Новичок': element.classList.add('cards__user-level_beginner');
       break;
@@ -92,18 +92,10 @@ function cardAdd(elementLink, elementTitle, elementText, elementLevel, elementSt
       break;
     case 'Профессионал': element.classList.add('cards__user-level_advansed');
       break;
-  }
+  }//в зависимости от ,,уровня,, карточки, ей добавляется дополнительный класс для навигации
   cardContainer.append(element);
-};
+};//данная функция добавляет карточки на страницу, считывая значения с массива объектов JSON, берет на вход ссылку на картинку, название карточки, текст карточки, категорию 'уровень' карточки и статус карточки
 
-/**
- * 
- * @param {*} elementLink 
- * @param {*} elementTitle 
- * @param {*} elementText 
- * @param {*} elementLevel 
- * @param {*} elementButton 
- */
 
 /*--------------------- Добавление и удаление тегов под блоком фильтр ----------------------*/
 
@@ -192,7 +184,7 @@ checkboxButtonsLevel.forEach((target) => {
     console.log(tagContainer)
     test();
   });
-});
+});//обработчик события для checkbox категории ,,levels,, считывает состояние чекбоксов и в зависимости от этого добавляет тег и фильтрует контент на странице
 
 function test() {
   const tagElement = tagContainer.querySelector('.cards__user-level-bg');
@@ -269,7 +261,7 @@ checkboxButtonsStatus.forEach((target) => {
       test();
     };
   });
-});
+});//обработчик события для checkbox категории ,,status,, считывает состояние чекбоксов и в зависимости от этого добавляет тег и фильтрует контент на странице
 
 function filter (checkbox, array, inp) {
   cardContainer.innerHTML = '';
@@ -286,7 +278,7 @@ function filter (checkbox, array, inp) {
       cardAdd(element.imageLink, element.title, element.text, element.level, element.status); 
     }); 
   }; 
-};
+};//данная функция при каждом вызове очищает элементы на странице и добавляет новые карточки в зависимости от состояния чекбоксов
 
 /*--------------------------------------- аккордеон ---------------------------------------*/
   
