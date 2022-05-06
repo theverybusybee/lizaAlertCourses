@@ -1,0 +1,10 @@
+.heading {
+    margin: 24px 0 0 60px;
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+	font-size: 48px;
+	line-height: 1.08;
+	color: #212329;
+}

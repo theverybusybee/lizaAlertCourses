@@ -1,0 +1,12 @@
+.courses {
+  max-width: 1320px;
+  margin: 0 auto;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 312px 1fr;
+  grid-template-areas: 
+  'aside cards'
+  'tags cards'
+  '. cards';
+  gap: 24px;
+}

@@ -1,0 +1,11 @@
+.cards__user-level-bg {
+  margin-top: 16px;
+  margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: #e6e7eb;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  max-width: fit-content;
+}

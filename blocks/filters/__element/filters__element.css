@@ -1,0 +1,4 @@
+.filters__element:not(:last-child) {
+  margin: 0;
+  margin-bottom: 16px;
+}

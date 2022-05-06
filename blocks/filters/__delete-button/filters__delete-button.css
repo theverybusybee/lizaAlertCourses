@@ -1,0 +1,13 @@
+.filters__delete-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #212329;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  visibility: hidden;
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="courses, Liza Alert" />
+    <meta
+      name="author"
+      content="Дмитрий Сережкин, София Купцова, Владислав Логинов, Александр Дерюгин, Вероника Антончик"
+    />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="../images/logos/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../pages/index.css" />
+    <title>LizaAlert Couses</title>
+  </head>
+  <body class="page">
+    <div class="page__container">
+      <header class="header">
+        <a class="header__link" href="../index.html">Учебная платформа</a>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a id="page-link" class="menu__link" href="../index.html">
+                <img
+                  class="menu__icon"
+                  src="./../images/logos/square-academic-cap_black.svg"
+                  alt="Курсы"
+                />Курсы
+              </a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__link menu__link_active" href="./profile.html">
+                <img
+                  class="menu__icon"
+                  src="../images/logos/preson-icon_orange.svg"
+                  alt="Профиль"
+                />Профиль
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- /.header -->
+
+      <main class="content">
+        <h1 class="heading">Профиль</h1>
+
+        <section class="profile">
+          <div class="profile-info">
+            <img
+              class="profile-info__avatar"
+              src="../images/logos/imgavatar.png"
+              alt="аватар пользователя"
+            />
+            <h2 class="profile-info__name">Иванова Анна Сидоровна</h2>
+            <div class="profile-info__achievements-container">
+              <ul class="profile-info__achievements">
+                <li class="profile-info__achievement">
+                  <img
+                    class="profile-info__achievement-icon"
+                    src="../images/logos/hierarchy.svg"
+                    alt="иконка профессионала"
+                  />
+                  Профессионал
+                </li>
+
+                <li class="profile-info__achievement">
+                  <img
+                    class="profile-info__achievement-icon"
+                    src="../images/logos/medal_black.svg"
+                    alt="иконка медали"
+                  />
+                  Картограф
+                </li>
+
+                <li class="profile-info__achievement">
+                  <img
+                    class="profile-info__achievement-icon"
+                    src="./../images/logos/square-academic-cap_black.svg"
+                    alt="иконка образования"
+                  />
+                  Пройдено 2 курса
+                </li>
+              </ul>
+
+              <button class="profile-info__exit-button">
+                <img
+                  class="profile-info__exit-icon"
+                  src="../images/logos/exit-logo_orange.svg"
+                  alt="выход"
+                />
+                Выйти из аккаунта
+              </button>
+            </div>
+          </div>
+
+          <div class="annotation annotation_theme_personal-data">
+            <p class="annotation__paragraph"
+              >Просьба указывать настоящие ФИО, это нужно для получения
+              сертификатов</p
+            >
+            <p class="annotation__paragraph"
+              >Географический регион влияет на&nbsp;доступность некоторых курсов
+              и занятий</p
+            >
+            <p class="annotation__paragraph"
+              >Если вы не хотите, чтобы другие пользователи видели ваши ФИО,
+              укажите позывной на форуме — он будет отображаться вместо ваших
+              настоящих данных</p
+            >
+            <p class="annotation__paragraph">Требования к загружаемому фото:</p>
+            <ul class="annotation__list">
+              <li class="annotation__list-item"
+                >разрешение не менее 640x640px</li
+              >
+              <li class="annotation__list-item">размер не более 3 МБ</li>
+            </ul>
+          </div>
+          <div class="annotation annotation_theme_account">
+            <p class="annotation__paragraph"
+              >Номер телефона используется как&nbsp;уникальный идентификатор
+              пользователя, поэтому его нельзя поменять вручную</p
+            >
+            <p class="annotation__paragraph"
+              >Если по какой-то причине у&nbsp;вас&nbsp;нет доступа к номеру
+              телефона на который вы&nbsp;регистрировали аккаунт, напишите в
+              поддержку</p
+            >
+            <p class="annotation__paragraph"
+              >Email нужен для восстановления пароля</p
+            >
+          </div>
+          <div class="profile-edit-card profile-edit-card_type_personal-data">
+            <div class="profile-edit-card__container">
+              <h2 class="profile-edit-card__heading">Личные данные</h2>
+
+              <form
+                class="profile-form profile-form_content_personal-data"
+                name="personalDataForm"
+              >
+                <p class="profile-form__input-title">ФИО</p>
+                <label class="profile-form__label" for="profile-name">
+                  <input
+                    class="profile-form__item profile-form__item_type_text"
+                    type="text"
+                    name="profile-name"
+                    id="profile-name"
+                    oninput="compareValue()"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/pen_black.svg"
+                    alt="иконка карандаша"
+                  />
+                </label>
+
+                <p class="profile-form__input-title">Дата рождения</p>
+                <label class="profile-form__label" for="profile-date-of-birth">
+                  <input
+                    class="profile-form__item profile-form__item_type_date"
+                    type="date"
+                    name="profile-date-of-birth"
+                    id="profile-date-of-birth"
+                    oninput="compareValue()"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/pen_black.svg"
+                    alt="иконка карандаша"
+                  />
+                </label>
+
+                <p class="profile-form__input-title">Географический регион</p>
+                <label class="profile-form__label" for="profile-location">
+                  <input
+                    class="profile-form__item profile-form__item_type_text"
+                    type="text"
+                    name="profile-location"
+                    id="profile-location"
+                    oninput="compareValue()"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/pen_black.svg"
+                    alt="иконка карандаша"
+                  />
+                </label>
+
+                <p class="profile-form__input-title">Позывной на форуме</p>
+                <label class="profile-form__label" for="profile-nickname">
+                  <input
+                    class="profile-form__item profile-form__item_type_text"
+                    type="text"
+                    name="profile-nickname"
+                    id="profile-nickname"
+                    oninput="compareValue()"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/pen_black.svg"
+                    alt="иконка карандаша"
+                  />
+                </label>
+
+                <p class="profile-form__input-title">Фото</p>
+                <label
+                  class="profile-form__label profile-form__label_type_file"
+                  for="profile-avatar"
+                >
+                  <input
+                    class="profile-form__item profile-form__item_type_file"
+                    type="file"
+                    name="profile-avatar"
+                    id="profile-avatar"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/clip_black.svg"
+                    alt="иконка скрепки"
+                  />
+                </label>
+
+                <button
+                  id="PersonalDataSubmitButton"
+                  class="profile-form__submit-button"
+                  type="submit"
+                  title="Сохранить"
+                  disabled
+                >
+                  Сохранить изменения
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- /.profile-edit-card -->
+
+          <div class="profile-edit-card profile-edit-card_type_account">
+            <div class="profile-edit-card__container">
+              <h2 class="profile-edit-card__heading">Аккаунт</h2>
+
+              <form
+                class="profile-form profile-form_content_account"
+                name="accountForm"
+              >
+                <p class="profile-form__input-title">Номер телефона</p>
+                <label class="profile-form__label" for="profile-number">
+                  <input
+                    class="profile-form__item profile-form__item_type_number"
+                    type="tel"
+                    name="profile-number"
+                    id="profile-number"
+                    placeholder="+7 123 456 78 90"
+                    oninput="compareValue()"
+                  />
+                </label>
+
+                <p class="profile-form__input-title">Email</p>
+                <label class="profile-form__label" for="profile-email">
+                  <input
+                    class="profile-form__item profile-form__item_type_email"
+                    type="email"
+                    name="profile-email"
+                    placeholder="anna@liza-alert.ru"
+                    id="profile-email"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/pen_black.svg"
+                    alt="иконка карандаша"
+                  />
+                </label>
+
+                <p class="profile-form__input-title">Пароль</p>
+                <label class="profile-form__label" for="profile-password">
+                  <input
+                    class="profile-form__item profile-form__item_type_password"
+                    type="password"
+                    name="profile-password"
+                    id="profile-password"
+                    oninput="compareValue()"
+                  />
+                  <img
+                    class="profile-form__item-icon"
+                    src="../images/logos/pen_black.svg"
+                    alt="иконка карандаша"
+                  />
+                </label>
+
+                <button
+                  id="AccountSubmitButton"
+                  class="profile-form__submit-button"
+                  type="submit"
+                  title="Сохранить"
+                  disabled
+                >
+                  Сохранить изменения
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- /.profile-edit-card -->
+        </section>
+      </main>
+      <!-- /.content -->
+
+      <footer class="footer"></footer>
+      <!-- /.footer -->
+    </div>
+    <!-- /.page__container -->
+    <script src="../scripts/profile.js"></script>
+  </body>
+</html>

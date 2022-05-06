@@ -1,0 +1,35 @@
+.profile-form__item {
+  padding: 12px 16px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.2px solid #e6e7eb;
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #212329;
+  max-height: 48px;
+}
+
+.profile-form__item::-webkit-input-placeholder {
+  color: #9397a3;
+  opacity: 1;
+}
+
+.profile-form__item::-moz-placeholder {
+  color: #9397a3;
+  opacity: 1;
+}
+
+.profile-form__item:hover {
+  border-color: #f60;
+}
+
+.profile-form__item:focus {
+  outline: none;
+  border-color: #f60;
+}
+
+.profile-form__item::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}

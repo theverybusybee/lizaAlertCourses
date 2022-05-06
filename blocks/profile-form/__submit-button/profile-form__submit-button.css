@@ -1,0 +1,13 @@
+.profile-form__submit-button {
+  margin: 32px auto;
+  padding: 12px 24px;
+  display: block;
+  border: none;
+  border-radius: 16px;
+  background: #e6e7eb;
+  color: #9397a3;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  cursor: not-allowed;
+}

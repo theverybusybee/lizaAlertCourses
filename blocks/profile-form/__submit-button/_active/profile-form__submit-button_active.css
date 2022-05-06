@@ -1,0 +1,5 @@
+.profile-form__submit-button_active {
+  background: #f60;
+  color: #fff;
+  cursor: pointer;
+}

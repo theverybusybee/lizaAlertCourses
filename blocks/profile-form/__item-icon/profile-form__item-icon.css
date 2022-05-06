@@ -1,0 +1,8 @@
+.profile-form__item-icon {
+    position: absolute;
+    background-color: #fff;
+    bottom: 25%;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+}
