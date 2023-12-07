@@ -8,14 +8,13 @@ Liza Alert - добровольческое некоммерческое общ�
 Фильтр курсов по категории, тематике, уровню и статусу. Заполнение профиля. 
 
 **Технологии**
-° HTML
-° CSS
-° grid layout 
-° flexbox
-° javascript
-° методология БЭМ 
+- HTML
+- CSS
+- Grid layout
+- Flexbox
+- JavaScript
+- Методология БЭМ 
 
-Редактор кода: visual studio code 
+Редактор кода: VisualStudioCode
 
-Ссылка на GitHub Pages:
-https://theverybusybee.github.io/lizaAlertCourses/
+Ссылка на GitHub Pages: https://theverybusybee.github.io/lizaAlertCourses/
